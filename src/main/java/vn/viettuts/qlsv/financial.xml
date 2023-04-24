@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <financials>
     <financial>
-        <id>6</id>
-        <date>2023-03-27</date>
+        <id>1</id>
+        <date>2023-04-12</date>
+        <type>Thu</type>
+        <details>LE THANH HUYEN qua sinh nhat</details>
+        <amount>1111111</amount>
+    </financial>
+    <financial>
+        <id>2</id>
+        <date>2023-04-13</date>
         <type>Chi</type>
-        <details>Bun dau nuoc nam</details>
-        <amount>35000</amount>
+        <details>ACER tien sua laptop</details>
+        <amount>1110000</amount>
+    </financial>
+    <financial>
+        <id>3</id>
+        <date>2023-03-26</date>
+        <type>Thu</type>
+        <details>PHAM GIANG THANH Tro cap tuan nay</details>
+        <amount>500000</amount>
     </financial>
     <financial>
         <id>4</id>
@@ -22,18 +36,11 @@
         <amount>125000</amount>
     </financial>
     <financial>
-        <id>11</id>
-        <date>2023-04-23</date>
+        <id>8</id>
+        <date>2023-04-10</date>
         <type>Thu</type>
-        <details>Rut tien ve tai khoan</details>
-        <amount>150000</amount>
-    </financial>
-    <financial>
-        <id>12</id>
-        <date>2023-03-13</date>
-        <type>Chi</type>
-        <details>Sinh nhật bạn cùng lớp</details>
-        <amount>150000</amount>
+        <details>NGUYEN THI TINH tra no</details>
+        <amount>598000</amount>
     </financial>
     <financial>
         <id>9</id>
@@ -50,39 +57,18 @@
         <amount>215000</amount>
     </financial>
     <financial>
-        <id>17</id>
-        <date>2021-09-08</date>
+        <id>11</id>
+        <date>2023-04-23</date>
+        <type>Thu</type>
+        <details>Rut tien ve tai khoan</details>
+        <amount>150000</amount>
+    </financial>
+    <financial>
+        <id>12</id>
+        <date>2023-03-13</date>
         <type>Chi</type>
-        <details>Mua quan ao</details>
-        <amount>250000</amount>
-    </financial>
-    <financial>
-        <id>3</id>
-        <date>2023-03-26</date>
-        <type>Thu</type>
-        <details>PHAM GIANG THANH Tro cap tuan nay</details>
-        <amount>500000</amount>
-    </financial>
-    <financial>
-        <id>8</id>
-        <date>2023-04-10</date>
-        <type>Thu</type>
-        <details>NGUYEN THI TINH tra no</details>
-        <amount>598000</amount>
-    </financial>
-    <financial>
-        <id>2</id>
-        <date>2023-04-13</date>
-        <type>Chi</type>
-        <details>ACER tien sua laptop</details>
-        <amount>1110000</amount>
-    </financial>
-    <financial>
-        <id>1</id>
-        <date>2023-04-12</date>
-        <type>Thu</type>
-        <details>LE THANH HUYEN qua sinh nhat</details>
-        <amount>1111111</amount>
+        <details>Sinh nhật bạn cùng lớp</details>
+        <amount>150000</amount>
     </financial>
     <financial>
         <id>13</id>
@@ -97,5 +83,12 @@
         <type>Chi</type>
         <details>Mua giày</details>
         <amount>2100000</amount>
+    </financial>
+    <financial>
+        <id>17</id>
+        <date>2021-09-08</date>
+        <type>Chi</type>
+        <details>Mua quan ao</details>
+        <amount>250000</amount>
     </financial>
 </financials>

@@ -30,7 +30,8 @@ public class FinancialController {
         view.addSortFinancialIdListener(new SortFinancialIdListener());
         view.addSearchFinancialDateListener(new SearchFinancialDateListener());
         view.addSearchFinancialAmountListener(new SearchFinancialAmountListener());
-        view.addListFinancialSelectionListener(new ListFinancialSelectionListener());
+        view.addListFinancialThuSelectionListener(new ListFinancialThuSelectionListener());
+        view.addListFinancialChiSelectionListener(new ListFinancialChiSelectionListener());
     }
 
     public void showFinancialView() {
@@ -286,12 +287,24 @@ public class FinancialController {
     }
 
     /**
-     * Lớp ListFinancialSelectionListener 
-     * chứa cài đặt cho sự kiện chọn financial trong bảng financial
+     * Lớp ListFinancialThuSelectionListener
+     * chứa cài đặt cho sự kiện chọn financial trong bảng financial Thu
      */
-    class ListFinancialSelectionListener implements ListSelectionListener {
+    class ListFinancialThuSelectionListener implements ListSelectionListener {
         public void valueChanged(ListSelectionEvent e) {
-            financialView.fillFinancialFromSelectedRow();
+            financialView.clearFinancialInfo();
+            financialView.fillFinancialThuFromSelectedRow();
+        }
+    }
+
+    /**
+     * Lớp ListFinancialChiSelectionListener
+     * chứa cài đặt cho sự kiện chọn financial trong bảng financial Chi
+     */
+    class ListFinancialChiSelectionListener implements ListSelectionListener {
+        public void valueChanged(ListSelectionEvent e) {
+            financialView.clearFinancialInfo();
+            financialView.fillFinancialChiFromSelectedRow();
         }
     }
 }
