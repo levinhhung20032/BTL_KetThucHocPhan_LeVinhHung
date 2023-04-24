@@ -34,6 +34,9 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2OZoB6mIQoXreLIIrTI1xdsbwio" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -61,6 +64,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ACER\Desktop\Coding Jetbrains\OOP\OOP_LeVinhHung\image" />
       <recent name="C:\Users\ACER\Desktop\Coding Jetbrains\OOP\BTL_KetThucHocPhan_LeVinhHung\image" />
       <recent name="C:\Users\ACER\Desktop\Coding Jetbrains\OOP\LeVinhHung_21011494_de8_BTCK-main\src\main\java\vn\viettuts\qlsv" />
     </key>
@@ -113,6 +117,7 @@
       <workItem from="1682319587980" duration="42000" />
       <workItem from="1682319849546" duration="2000" />
       <workItem from="1682319879797" duration="223000" />
+      <workItem from="1682320187825" duration="203000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1682320061360</created>
@@ -121,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682320061360</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update">
+      <created>1682320363303</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682320363303</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

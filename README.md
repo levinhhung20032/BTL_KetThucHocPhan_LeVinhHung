@@ -105,7 +105,7 @@ Chương trình chứa 2 chế độ tìm kiếm:
 - Tìm kiếm theo lượng tiền giao dịch (_Search By Amount_)
 
 #### Tìm kiếm theo thời điểm
-![img.png](image/img_14.png)
+![img_14.png](image/img_14.png)
 
 - Người dùng nhập thời điểm vào thanh ghi bên cạnh nút "**Search By Date**" (Có thể nhập ngày, tháng hoặc năm, có ngăn cách nhau bằng dấu "/")
 - Nhấn nút "**Search By Date**".
@@ -113,7 +113,7 @@ Chương trình chứa 2 chế độ tìm kiếm:
 - Nhất nút "**Clear**" (tương tư như thao tác nhập, sửa, xóa) để quay lại danh sách giao dịch ban đầu.
 
 #### Tìm kiếm theo lượng tiền giao dịch
-![img_1.png](image/img_17.png)
+![img_17.png](image/img_17.png)
 
 - Người dùng có thể chọn tìm kiếm theo lượng tiền tối đa (_Search By Max Amount_) hoặc tối thiểu (_Search By Min Amount_):
 	+ Nhập lượng tiền vào thanh ghi bên cạnh chế độ muốn tìm kiếm
