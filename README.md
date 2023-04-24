@@ -3,7 +3,7 @@
 Bài làm của: Lê Vĩnh Hưng		
 MSV: 21011494   
 Lớp: K15-KHMT   
-Lớp tín chỉ: Lập trình hướng đối tượng-1-2-22(N07)		
+Lớp tín chỉ: Lập trình hướng đối tượng-1-2-22(N07)			
 Đề: 8. Quản lý thu chi cá nhân
 
 Em xin cam kết bài làm không được chia sẻ với bất kì ai ngoài giáo viên nhằm tránh hành vi sao chép bài.
