@@ -89,8 +89,8 @@ public class FinancialController {
                     } else balance -= value.getAmount();
                 }
                 if (balance<0) {
-                    financialView.showMessage("Invalid Edit, Available Balance < 0!");
                     financialDao.edit(old_financial);
+                    financialView.showMessage("Invalid Edit, Available Balance < 0!");
                 }
                 else {
                     financialView.showFinancial(financial);
