@@ -29,8 +29,7 @@ public class FinancialController {
         view.addSortFinancialDateListener(new SortFinancialDateListener());
         view.addSortFinancialIdListener(new SortFinancialIdListener());
         view.addSearchFinancialDateListener(new SearchFinancialDateListener());
-        view.addSearchFinancialMinAmountListener(new SearchFinancialMinAmountListener());
-        view.addSearchFinancialMaxAmountListener(new SearchFinancialMaxAmountListener());
+        view.addSearchFinancialAmountListener(new SearchFinancialAmountListener());
         view.addListFinancialSelectionListener(new ListFinancialSelectionListener());
     }
 
@@ -53,7 +52,9 @@ public class FinancialController {
                 for (Financial value : list) {
                     if (value.getType().equals("Thu")) {
                         balance += value.getAmount();
-                    } else balance -= value.getAmount();
+                    } else {
+                        balance -= value.getAmount();
+                    }
                 }
                 if (balance-financial.getAmount()<0 && financial.getType().equals("Chi")) {
                     financialView.showMessage("Unaffordable!");
@@ -62,8 +63,6 @@ public class FinancialController {
                     financialDao.add(financial);
                     financialView.showFinancial(financial);
                     financialView.showListFinancials(list);
-                    if (financial.getType().equals("Chi")) financialView.showAvailableBalance(balance-financial.getAmount());
-                    else financialView.showAvailableBalance(balance+financial.getAmount());
                     financialView.showMessage("Added!");
                 }
             }
@@ -86,7 +85,9 @@ public class FinancialController {
                 for (Financial value : list) {
                     if (value.getType().equals("Thu")) {
                         balance += value.getAmount();
-                    } else balance -= value.getAmount();
+                    } else {
+                        balance -= value.getAmount();
+                    }
                 }
                 if (balance<0) {
                     financialDao.edit(old_financial);
@@ -95,7 +96,6 @@ public class FinancialController {
                 else {
                     financialView.showFinancial(financial);
                     financialView.showListFinancials(financialDao.getListFinancials());
-                    financialView.showAvailableBalance(balance);
                     financialView.showMessage("Edited!");
                 }
             }
@@ -115,15 +115,15 @@ public class FinancialController {
                 for (Financial value : list) {
                     if (value.getType().equals("Thu")) {
                         balance += value.getAmount();
-                    } else balance -= value.getAmount();
+                    } else {
+                        balance -= value.getAmount();
+                    }
                 }
                 if (financial.getType().equals("Thu") && balance-financial.getAmount()<0) financialView.showMessage("Invalid Delete, Available Balance < 0");
                 else {
                     financialDao.delete(financial);
                     financialView.clearFinancialInfo();
                     financialView.showListFinancials(financialDao.getListFinancials());
-                    if (financial.getType().equals("Chi")) financialView.showAvailableBalance(balance+financial.getAmount());
-                    else financialView.showAvailableBalance(balance-financial.getAmount());
                     financialView.showMessage("Deleted!");
                 }
             }
@@ -223,16 +223,17 @@ public class FinancialController {
                 financialView.showMessage("Not found!");
             }
             else {
+                int balance=0;
                 financialView.showListFinancials(found);
             }
         }
     }
 
     /**
-     * Lớp SearchFinancialMinAmountListener
+     * Lớp SearchFinancialAmountListener
      * chứa cài đặt cho sự kiện click button "Search By Min Amount"
      */
-    class SearchFinancialMinAmountListener implements ActionListener {
+    class SearchFinancialAmountListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             // Kiểm tra đã điền thanh search chưa
             if (financialView.getSearchMinAmount()==-999) {

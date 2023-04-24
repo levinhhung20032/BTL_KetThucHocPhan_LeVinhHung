@@ -28,27 +28,33 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
     private JButton sortFinancialDateBtn;
     private JButton sortFinancialIdBtn;
     private JButton searchFinancialDateBtn;
-    private JButton searchFinancialMinAmountBtn;
-    private JButton searchFinancialMaxAmountBtn;
-    private JTable financialTable;
+    private JButton searchFinancialAmountBtn;
+    private JTable financialThuTable;
+    private JTable financialChiTable;
 
     private JTextField idField;
     private JTextField dateField;
-    private JRadioButton typeRadio1;
-    private JRadioButton typeRadio2;
+    private JRadioButton typeThuRadio;
+    private JRadioButton typeChiRadio;
+    private JRadioButton dateDayRadio;
+    private JRadioButton dateMonthRadio;
+    private JRadioButton dateYearRadio;
     private ButtonGroup typeRadio;
     private JTextArea detailsTA;
     private JTextField amountField;
     private JTextField balanceField;
+    private JTextField totalThuField;
+    private JTextField totalChiField;
     private JTextField searchFinancialDateField;
-    private JTextField searchFinancialMinAmountField;
-    private JTextField searchFinancialMaxAmountField;
+    private JTextField searchFinancialFromAmountField;
+    private JTextField searchFinancialToAmountField;
 
     // định nghĩa các cột của bảng financial
     private final String [] columnNames = new String [] {
             "ID", "Date", "Type", "Details", "Amount (VND)"};
     // định nghĩa dữ liệu mặc định của bẳng financial là rỗng
-    private final Object data = new Object [][] {};
+    private final Object dataThu = new Object [][] {};
+    private final Object dataChi = new Object [][] {};
     
     public FinancialView() {
         initComponents();
@@ -65,58 +71,79 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
         sortFinancialDateBtn = new JButton("Sort By Date");
         sortFinancialIdBtn = new JButton("Sort By ID");
         searchFinancialDateBtn=new JButton("Search By Date");
-        searchFinancialMinAmountBtn=new JButton("Search By Min Amount");
-        searchFinancialMaxAmountBtn=new JButton("Search By Max Amount");
+        searchFinancialAmountBtn =new JButton("Search By Amount");
 
         // khởi tạo bảng financial
-        JScrollPane jScrollPaneFinancialTable = new JScrollPane();
-        financialTable = new JTable();
+        JScrollPane jScrollPaneFinancialThuTable = new JScrollPane();
+        financialThuTable = new JTable();
+        JScrollPane jScrollPaneFinancialChiTable = new JScrollPane();
+        financialChiTable = new JTable();
         
         // khởi tạo các label
         JLabel idLabel = new JLabel("Id");
+        JLabel thuLabel = new JLabel("Receive");
+        JLabel chiLabel = new JLabel("Spend");
         JLabel dateLabel = new JLabel("Date");
         JLabel typeLabel = new JLabel("Type");
         JLabel detailsLabel = new JLabel("Details");
         JLabel amountLabel = new JLabel("Amount (VND)");
         JLabel balanceLabel = new JLabel("Available Balance (VND)");
+        JLabel fromAmountLabel = new JLabel("From:");
+        JLabel toAmountLabel = new JLabel("To:");
+        JLabel totalThuLabel = new JLabel("Total Receive (VND)");
+        JLabel totalChiLabel = new JLabel("Total Spend (VND)");
 
         // khởi tạo Radio Button
-        typeRadio1 = new JRadioButton("Thu");
-        typeRadio2 = new JRadioButton("Chi");
+        dateDayRadio = new JRadioButton("day");
+        dateMonthRadio = new JRadioButton("month");
+        dateYearRadio = new JRadioButton("year");
+        add(dateDayRadio);
+        add(dateMonthRadio);
+        add(dateYearRadio);
+        typeThuRadio = new JRadioButton("Thu");
+        typeChiRadio = new JRadioButton("Chi");
         typeRadio = new ButtonGroup();
-        typeRadio.add(typeRadio1);
-        typeRadio.add(typeRadio2);
-        add(typeRadio1);
-        add(typeRadio2);
+        typeRadio.add(typeThuRadio);
+        typeRadio.add(typeChiRadio);
+        add(typeThuRadio);
+        add(typeChiRadio);
         
         // khởi tạo các trường nhập dữ liệu cho financial
         idField = new JTextField(6);
         idField.setEditable(false);
-        dateField = new JTextField(15);
+        dateField = new JTextField(17);
         detailsTA = new JTextArea();
-        detailsTA.setColumns(15);
-        detailsTA.setRows(5);
-        JScrollPane jScrollPaneAddress = new JScrollPane();
-        jScrollPaneAddress.setViewportView(detailsTA);
-        amountField = new JTextField(15);
+        detailsTA.setColumns(17);
+        detailsTA.setRows(3);
+        JScrollPane jScrollPaneDetails = new JScrollPane();
+        jScrollPaneDetails.setViewportView(detailsTA);
+        amountField = new JTextField(17);
         balanceField = new JTextField(8);
         balanceField.setEditable(false);
-        searchFinancialDateField = new JTextField(10);
-        searchFinancialMinAmountField = new JTextField(10);
-        searchFinancialMaxAmountField = new JTextField(10);
+        totalThuField = new JTextField(8);
+        totalThuField.setEditable(false);
+        totalChiField = new JTextField(8);
+        totalChiField.setEditable(false);
+        searchFinancialDateField = new JTextField(7);
+        searchFinancialFromAmountField = new JTextField(7);
+        searchFinancialToAmountField = new JTextField(7);
         
         // cài đặt các cột và data cho bảng financial
-        financialTable.setModel(new DefaultTableModel((Object[][]) data, columnNames));
-        jScrollPaneFinancialTable.setViewportView(financialTable);
-        jScrollPaneFinancialTable.setPreferredSize(new Dimension (480, 370));
+        financialThuTable.setModel(new DefaultTableModel((Object[][]) dataThu, columnNames));
+        jScrollPaneFinancialThuTable.setViewportView(financialThuTable);
+        jScrollPaneFinancialThuTable.setPreferredSize(new Dimension (480, 370));
+        financialChiTable.setModel(new DefaultTableModel((Object[][]) dataChi, columnNames));
+        jScrollPaneFinancialChiTable.setViewportView(financialChiTable);
+        jScrollPaneFinancialChiTable.setPreferredSize(new Dimension (480, 370));
         
          // tạo spring layout
         SpringLayout layout = new SpringLayout();
         // tạo đối tượng panel để chứa các thành phần của màn hình quản lý Financial
         JPanel panel = new JPanel();
-        panel.setSize(800, 420);
+        panel.setSize(1500, 420);
         panel.setLayout(layout);
-        panel.add(jScrollPaneFinancialTable);
+        panel.add(jScrollPaneFinancialThuTable);
+        panel.add(jScrollPaneFinancialChiTable);
         
         panel.add(addFinancialBtn);
         panel.add(editFinancialBtn);
@@ -126,150 +153,230 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
         panel.add(sortFinancialDateBtn);
         panel.add(sortFinancialIdBtn);
         panel.add(searchFinancialDateBtn);
-        panel.add(searchFinancialMinAmountBtn);
-        panel.add(searchFinancialMaxAmountBtn);
+        panel.add(searchFinancialAmountBtn);
 
         panel.add(idLabel);
+        panel.add(thuLabel);
+        panel.add(chiLabel);
         panel.add(dateLabel);
         panel.add(typeLabel);
         panel.add(detailsLabel);
         panel.add(amountLabel);
         panel.add(balanceLabel);
+        panel.add(fromAmountLabel);
+        panel.add(toAmountLabel);
+        panel.add(totalThuLabel);
+        panel.add(totalChiLabel);
         
         panel.add(idField);
         panel.add(dateField);
-        panel.add(typeRadio1);
-        panel.add(typeRadio2);
-        panel.add(jScrollPaneAddress);
+        panel.add(typeThuRadio);
+        panel.add(typeChiRadio);
+        panel.add(dateDayRadio);
+        panel.add(dateMonthRadio);
+        panel.add(dateYearRadio);
+        panel.add(jScrollPaneDetails);
         panel.add(amountField);
         panel.add(balanceField);
+        panel.add(totalThuField);
+        panel.add(totalChiField);
         panel.add(searchFinancialDateField);
-        panel.add(searchFinancialMinAmountField);
-        panel.add(searchFinancialMaxAmountField);
+        panel.add(searchFinancialFromAmountField);
+        panel.add(searchFinancialToAmountField);
 
         // cài đặt vị trí các thành phần trên màn hình login
-        layout.putConstraint(SpringLayout.WEST, idLabel, 10, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.WEST, idLabel, 20, SpringLayout.WEST, panel);
         layout.putConstraint(SpringLayout.NORTH, idLabel, 10, SpringLayout.NORTH, panel);
-        layout.putConstraint(SpringLayout.WEST, dateLabel, 10, SpringLayout.WEST, panel);
-        layout.putConstraint(SpringLayout.NORTH, dateLabel, 40, SpringLayout.NORTH, panel);
-        layout.putConstraint(SpringLayout.WEST, typeLabel, 10, SpringLayout.WEST, panel);
-        layout.putConstraint(SpringLayout.NORTH, typeLabel, 70, SpringLayout.NORTH, panel);
-        layout.putConstraint(SpringLayout.WEST, detailsLabel, 10, SpringLayout.WEST, panel);
-        layout.putConstraint(SpringLayout.NORTH, detailsLabel, 100, SpringLayout.NORTH, panel);
-        layout.putConstraint(SpringLayout.WEST, amountLabel, 10, SpringLayout.WEST, panel);
-        layout.putConstraint(SpringLayout.NORTH, amountLabel, 200, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, thuLabel, 520, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, thuLabel, 10, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, chiLabel, 1020, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, chiLabel, 10, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, dateLabel, 20, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, dateLabel, 60, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, typeLabel, 20, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, typeLabel, 110, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, detailsLabel, 20, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, detailsLabel, 155, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, amountLabel, 20, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, amountLabel, 230, SpringLayout.NORTH, panel);
         layout.putConstraint(SpringLayout.WEST, balanceLabel, 20, SpringLayout.WEST, panel);
-        layout.putConstraint(SpringLayout.NORTH, balanceLabel, 405, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.NORTH, balanceLabel, 450, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, fromAmountLabel, 175, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, fromAmountLabel, 385, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, toAmountLabel, 180, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, toAmountLabel, 415, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, totalThuLabel, 300, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, totalThuLabel, 420, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, totalChiLabel, 800, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, totalChiLabel, 420, SpringLayout.NORTH, panel);
 
-        layout.putConstraint(SpringLayout.WEST, idField, 100, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.WEST, idField, 130, SpringLayout.WEST, panel);
         layout.putConstraint(SpringLayout.NORTH, idField, 10, SpringLayout.NORTH, panel);
-        layout.putConstraint(SpringLayout.WEST, dateField, 100, SpringLayout.WEST, panel);
-        layout.putConstraint(SpringLayout.NORTH, dateField, 40, SpringLayout.NORTH, panel);
-        layout.putConstraint(SpringLayout.WEST, typeRadio1, 100, SpringLayout.WEST, panel);
-        layout.putConstraint(SpringLayout.NORTH, typeRadio1, 70, SpringLayout.NORTH, panel);
-        layout.putConstraint(SpringLayout.WEST, typeRadio2, 170, SpringLayout.WEST, panel);
-        layout.putConstraint(SpringLayout.NORTH, typeRadio2, 70, SpringLayout.NORTH, panel);
-        layout.putConstraint(SpringLayout.WEST, jScrollPaneAddress, 100, SpringLayout.WEST, panel);
-        layout.putConstraint(SpringLayout.NORTH, jScrollPaneAddress, 100, SpringLayout.NORTH, panel);
-        layout.putConstraint(SpringLayout.WEST, amountField, 100, SpringLayout.WEST, panel);
-        layout.putConstraint(SpringLayout.NORTH, amountField, 200, SpringLayout.NORTH, panel);
-        layout.putConstraint(SpringLayout.WEST, balanceField, 170, SpringLayout.WEST, panel);
-        layout.putConstraint(SpringLayout.NORTH, balanceField, 405, SpringLayout.NORTH, panel);
-        layout.putConstraint(SpringLayout.WEST, searchFinancialDateField, 200, SpringLayout.WEST, panel);
-        layout.putConstraint(SpringLayout.NORTH, searchFinancialDateField, 285, SpringLayout.NORTH, panel);
-        layout.putConstraint(SpringLayout.WEST, searchFinancialMinAmountField, 200, SpringLayout.WEST, panel);
-        layout.putConstraint(SpringLayout.NORTH, searchFinancialMinAmountField, 315, SpringLayout.NORTH, panel);
-        layout.putConstraint(SpringLayout.WEST, searchFinancialMaxAmountField, 200, SpringLayout.WEST, panel);
-        layout.putConstraint(SpringLayout.NORTH, searchFinancialMaxAmountField, 345, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, dateField, 130, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, dateField, 60, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, typeThuRadio, 130, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, typeThuRadio, 110, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, typeChiRadio, 190, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, typeChiRadio, 110, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, dateDayRadio, 65, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, dateDayRadio, 40, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, dateMonthRadio, 65, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, dateMonthRadio, 60, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, dateYearRadio, 65, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, dateYearRadio, 80, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, jScrollPaneDetails, 130, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, jScrollPaneDetails, 155, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, amountField, 130, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, amountField, 230, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, balanceField, 180, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, balanceField, 450, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, totalThuField, 440, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, totalThuField, 420, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, totalChiField, 940, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, totalChiField, 420, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, searchFinancialDateField, 220, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, searchFinancialDateField, 345, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, searchFinancialFromAmountField, 220, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, searchFinancialFromAmountField, 385, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, searchFinancialToAmountField, 220, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, searchFinancialToAmountField, 415, SpringLayout.NORTH, panel);
 
-        layout.putConstraint(SpringLayout.WEST, jScrollPaneFinancialTable, 300, SpringLayout.WEST, panel);
-        layout.putConstraint(SpringLayout.NORTH, jScrollPaneFinancialTable, 10, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, jScrollPaneFinancialThuTable, 300, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, jScrollPaneFinancialThuTable, 40, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, jScrollPaneFinancialChiTable, 800, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, jScrollPaneFinancialChiTable, 40, SpringLayout.NORTH, panel);
         
         layout.putConstraint(SpringLayout.WEST, addFinancialBtn, 20, SpringLayout.WEST, panel);
-        layout.putConstraint(SpringLayout.NORTH, addFinancialBtn, 240, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.NORTH, addFinancialBtn, 285, SpringLayout.NORTH, panel);
         layout.putConstraint(SpringLayout.WEST, editFinancialBtn, 60, SpringLayout.WEST, addFinancialBtn);
-        layout.putConstraint(SpringLayout.NORTH, editFinancialBtn, 240, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.NORTH, editFinancialBtn, 285, SpringLayout.NORTH, panel);
         layout.putConstraint(SpringLayout.WEST, deleteFinancialBtn, 60, SpringLayout.WEST, editFinancialBtn);
-        layout.putConstraint(SpringLayout.NORTH, deleteFinancialBtn, 240, SpringLayout.NORTH, panel);
-        layout.putConstraint(SpringLayout.WEST, searchFinancialDateBtn, 10, SpringLayout.WEST, panel);
-        layout.putConstraint(SpringLayout.NORTH, searchFinancialDateBtn, 280, SpringLayout.NORTH, panel);
-        layout.putConstraint(SpringLayout.WEST, searchFinancialMinAmountBtn, 10, SpringLayout.WEST, panel);
-        layout.putConstraint(SpringLayout.NORTH, searchFinancialMinAmountBtn, 310, SpringLayout.NORTH, panel);
-        layout.putConstraint(SpringLayout.WEST, searchFinancialMaxAmountBtn, 10, SpringLayout.WEST, panel);
-        layout.putConstraint(SpringLayout.NORTH, searchFinancialMaxAmountBtn, 340, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.NORTH, deleteFinancialBtn, 285, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, searchFinancialDateBtn, 20, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, searchFinancialDateBtn, 340, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.WEST, searchFinancialAmountBtn, 20, SpringLayout.WEST, panel);
+        layout.putConstraint(SpringLayout.NORTH, searchFinancialAmountBtn, 395, SpringLayout.NORTH, panel);
 
-        layout.putConstraint(SpringLayout.NORTH, clearBtn, 240, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.NORTH, clearBtn, 285, SpringLayout.NORTH, panel);
         layout.putConstraint(SpringLayout.WEST, clearBtn, 80, SpringLayout.WEST, deleteFinancialBtn);
         
         layout.putConstraint(SpringLayout.WEST, sortFinancialAmountBtn, 300, SpringLayout.WEST, panel);
-        layout.putConstraint(SpringLayout.NORTH, sortFinancialAmountBtn, 400, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.NORTH, sortFinancialAmountBtn, 450, SpringLayout.NORTH, panel);
         layout.putConstraint(SpringLayout.WEST, sortFinancialDateBtn, 150, SpringLayout.WEST, sortFinancialAmountBtn);
-        layout.putConstraint(SpringLayout.NORTH, sortFinancialDateBtn, 400, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.NORTH, sortFinancialDateBtn, 450, SpringLayout.NORTH, panel);
         layout.putConstraint(SpringLayout.WEST, sortFinancialIdBtn, 130, SpringLayout.WEST, sortFinancialDateBtn);
-        layout.putConstraint(SpringLayout.NORTH, sortFinancialIdBtn, 400, SpringLayout.NORTH, panel);
+        layout.putConstraint(SpringLayout.NORTH, sortFinancialIdBtn, 450, SpringLayout.NORTH, panel);
         
         this.add(panel);
         this.pack();
         this.setTitle("Financial Management");
-        this.setSize(800, 500);
+        this.setSize(1300, 530);
         // disable Edit and Delete buttons
         editFinancialBtn.setEnabled(false);
         deleteFinancialBtn.setEnabled(false);
         // enable Add button
         addFinancialBtn.setEnabled(true);
         // show available balance
-        int balance=0;
+        int balance=0, thu=0, chi=0;
         List<Financial> list = financialDao.getListFinancials();
         for (Financial financial : list) {
             if (financial.getType().equals("Thu")) {
                 balance += financial.getAmount();
-            } else balance -= financial.getAmount();
+                thu+=financial.getAmount();
+            } else {
+                balance -= financial.getAmount();
+                chi+=financial.getAmount();
+            }
         }
         this.showAvailableBalance(balance);
+        this.showTotalThuBalance(thu);
+        this.showTotalChiBalance(chi);
     }
 
     public void showAvailableBalance(int balance){
         balanceField.setText(""+balance);
     }
 
+    public void showTotalThuBalance(int thu){
+        totalThuField.setText(""+thu);
+    }
+
+    public void showTotalChiBalance(int chi){
+        totalChiField.setText(""+chi);
+    }
     public void showMessage(String message) {
         JOptionPane.showMessageDialog(this, message);
     }
 
 
     /**
-     * hiển thị list financial vào bảng financialTable
+     * hiển thị list financial vào bảng financialThuTable
      */
     public void showListFinancials(List<Financial> list) {
-        int size = list.size();
-        // với bảng financialTable có 5 cột,
+        // với bảng financialThuTable có 5 cột,
         // khởi tạo mảng 2 chiều financials, trong đó:
-        // số hàng: là kích thước của list financial 
+        // số hàng: là kích thước của list financial chia làm 2 phần thu và chi
         // số cột: là 5
-        Object [][] financials = new Object[size][5];
-        for (int i = 0; i < size; i++) {
-            financials[i][0] = list.get(i).getId();
-            financials[i][1] = list.get(i).getDate().format(DateTimeFormatter.ofPattern("dd/MM/uuuu"));
-            financials[i][2] = list.get(i).getType();
-            financials[i][3] = list.get(i).getDetails();
-            financials[i][4] = list.get(i).getAmount();
+        int countThu=0, countChi=0, balance=0, thu=0, chi=0;
+        for (Financial financial : list) {
+            if (financial.getType().equals("Thu")) {
+                thu+=financial.getAmount();
+                balance+=financial.getAmount();
+                countThu++;
+            } else {
+                chi+=financial.getAmount();
+                balance-=financial.getAmount();
+                countChi++;
+            }
         }
-        financialTable.setModel(new DefaultTableModel(financials, columnNames));
-        financialTable.getColumnModel().getColumn(0).setMaxWidth(30);
-        financialTable.getColumnModel().getColumn(1).setMaxWidth(70);
-        financialTable.getColumnModel().getColumn(2).setMaxWidth(40);
-        financialTable.getColumnModel().getColumn(3).setMaxWidth(240);
-        financialTable.getColumnModel().getColumn(4).setMaxWidth(100);
+        showAvailableBalance(balance);
+        showTotalChiBalance(chi);
+        showTotalThuBalance(thu);
+        Object [][] financialsThu = new Object[countThu][5];
+        Object [][] financialsChi = new Object[countChi][5];
+        countThu=0;countChi=0;
+        for (Financial financial : list) {
+            if (financial.getType().equals("Thu")) {
+                financialsThu[countThu][0] = financial.getId();
+                financialsThu[countThu][1] = financial.getDate().format(DateTimeFormatter.ofPattern("dd/MM/uuuu"));
+                financialsThu[countThu][2] = financial.getType();
+                financialsThu[countThu][3] = financial.getDetails();
+                financialsThu[countThu][4] = financial.getAmount();
+                countThu++;
+            } else {
+                financialsChi[countChi][0] = financial.getId();
+                financialsChi[countChi][1] = financial.getDate().format(DateTimeFormatter.ofPattern("dd/MM/uuuu"));
+                financialsChi[countChi][2] = financial.getType();
+                financialsChi[countChi][3] = financial.getDetails();
+                financialsChi[countChi][4] = financial.getAmount();
+                countChi++;
+            }
+        }
+        financialThuTable.setModel(new DefaultTableModel(financialsThu, columnNames));
+        financialThuTable.getColumnModel().getColumn(0).setMaxWidth(30);
+        financialThuTable.getColumnModel().getColumn(1).setMaxWidth(70);
+        financialThuTable.getColumnModel().getColumn(2).setMaxWidth(40);
+        financialThuTable.getColumnModel().getColumn(3).setMaxWidth(240);
+        financialThuTable.getColumnModel().getColumn(4).setMaxWidth(100);
+        financialChiTable.setModel(new DefaultTableModel(financialsChi, columnNames));
+        financialChiTable.getColumnModel().getColumn(0).setMaxWidth(30);
+        financialChiTable.getColumnModel().getColumn(1).setMaxWidth(70);
+        financialChiTable.getColumnModel().getColumn(2).setMaxWidth(40);
+        financialChiTable.getColumnModel().getColumn(3).setMaxWidth(240);
+        financialChiTable.getColumnModel().getColumn(4).setMaxWidth(100);
 
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
         for (int i = 0; i < 3; i++) {
-            financialTable.getColumnModel().getColumn(i).setCellRenderer( centerRenderer );
-            financialTable.getColumnModel().getColumn(i).setResizable(false);
+            financialThuTable.getColumnModel().getColumn(i).setCellRenderer( centerRenderer );
+            financialThuTable.getColumnModel().getColumn(i).setResizable(false);
+            financialChiTable.getColumnModel().getColumn(i).setCellRenderer( centerRenderer );
+            financialChiTable.getColumnModel().getColumn(i).setResizable(false);
         }
         DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
         rightRenderer.setHorizontalAlignment( JLabel.RIGHT );
-        financialTable.getColumnModel().getColumn(4).setCellRenderer( rightRenderer );
+        financialThuTable.getColumnModel().getColumn(4).setCellRenderer( rightRenderer );
+        financialChiTable.getColumnModel().getColumn(4).setCellRenderer( rightRenderer );
     }
     
     /**
@@ -278,15 +385,15 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
      */
     public void fillFinancialFromSelectedRow() {
         // lấy chỉ số của hàng được chọn 
-        int row = financialTable.getSelectedRow();
+        int row = financialThuTable.getSelectedRow();
         if (row >= 0) {
-            idField.setText(financialTable.getModel().getValueAt(row, 0).toString());
-            dateField.setText(financialTable.getModel().getValueAt(row, 1).toString());
-            if (financialTable.getModel().getValueAt(row, 2).toString().equals("Thu")){
-                typeRadio1.doClick();
-            } else typeRadio2.doClick();
-            detailsTA.setText(financialTable.getModel().getValueAt(row, 3).toString());
-            amountField.setText(financialTable.getModel().getValueAt(row, 4).toString());
+            idField.setText(financialThuTable.getModel().getValueAt(row, 0).toString());
+            dateField.setText(financialThuTable.getModel().getValueAt(row, 1).toString());
+            if (financialThuTable.getModel().getValueAt(row, 2).toString().equals("Thu")){
+                typeThuRadio.doClick();
+            } else typeChiRadio.doClick();
+            detailsTA.setText(financialThuTable.getModel().getValueAt(row, 3).toString());
+            amountField.setText(financialThuTable.getModel().getValueAt(row, 4).toString());
             // enable Edit and Delete buttons
             editFinancialBtn.setEnabled(true);
             deleteFinancialBtn.setEnabled(true);
@@ -305,8 +412,8 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
         detailsTA.setText("");
         amountField.setText("");
         searchFinancialDateField.setText("");
-        searchFinancialMinAmountField.setText("");
-        searchFinancialMaxAmountField.setText("");
+        searchFinancialFromAmountField.setText("");
+        searchFinancialToAmountField.setText("");
         // disable Edit and Delete buttons
         editFinancialBtn.setEnabled(false);
         deleteFinancialBtn.setEnabled(false);
@@ -322,8 +429,8 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
         idField.setText("" + financial.getId());
         dateField.setText(financial.getDate().format(formatter));
         if (financial.getType().equals("Thu")){
-            typeRadio1.doClick();
-        } else typeRadio2.doClick();
+            typeThuRadio.doClick();
+        } else typeChiRadio.doClick();
         detailsTA.setText(financial.getDetails());
         amountField.setText("" + financial.getAmount());
         // enable Edit and Delete buttons
@@ -351,7 +458,7 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
             int month=Integer.parseInt(date[1]);
             int year=Integer.parseInt(date[2]);
             financial.setDate(LocalDate.of(year, month, day));
-            if(typeRadio1.isSelected()) financial.setType("Thu");
+            if(typeThuRadio.isSelected()) financial.setType("Thu");
             else financial.setType("Chi");
             financial.setDetails(detailsTA.getText().trim());
             financial.setAmount(Integer.parseInt(amountField.getText().trim()));
@@ -377,13 +484,13 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
     }
 
     public int getSearchMinAmount(){
-        if (searchFinancialMinAmountField.getText().equals("")) return -999;
-        else return Integer.parseInt(searchFinancialMinAmountField.getText());
+        if (searchFinancialFromAmountField.getText().equals("")) return -999;
+        else return Integer.parseInt(searchFinancialFromAmountField.getText());
     }
 
     public int getSearchMaxAmount(){
-        if (searchFinancialMaxAmountField.getText().equals("")) return -999;
-        else return Integer.parseInt(searchFinancialMaxAmountField.getText());
+        if (searchFinancialToAmountField.getText().equals("")) return -999;
+        else return Integer.parseInt(searchFinancialToAmountField.getText());
     }
 
     private boolean validateDetails() {
@@ -412,7 +519,7 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
     }
     
     private boolean validateType() {
-        if (!typeRadio1.isSelected() && !typeRadio2.isSelected()) {
+        if (!typeThuRadio.isSelected() && !typeChiRadio.isSelected()) {
             showMessage("Must select Type!");
             return false;
         }
@@ -473,15 +580,11 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
         searchFinancialDateBtn.addActionListener(listener);
     }
 
-    public void addSearchFinancialMinAmountListener(ActionListener listener) {
-        searchFinancialMinAmountBtn.addActionListener(listener);
-    }
-
-    public void addSearchFinancialMaxAmountListener(ActionListener listener) {
-        searchFinancialMaxAmountBtn.addActionListener(listener);
+    public void addSearchFinancialAmountListener(ActionListener listener) {
+        searchFinancialAmountBtn.addActionListener(listener);
     }
     
     public void addListFinancialSelectionListener(ListSelectionListener listener) {
-        financialTable.getSelectionModel().addListSelectionListener(listener);
+        financialThuTable.getSelectionModel().addListSelectionListener(listener);
     }
 }
