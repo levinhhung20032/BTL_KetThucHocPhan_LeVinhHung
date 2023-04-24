@@ -42,14 +42,14 @@ Sau khi nhập đúng tài khoản, mật khẩu và nhấn Login, giao diện L
 
 ![img_16.png](image/img_16.png)
 
->Khi giao diện được mở, chương trình sẽ tự động truy cập vào cơ sở dữ liệu và tính "_Available Balance (VND)_" và điền vào mục cùng tên, mục này người dùng không thể truy cập cũng như sửa đổi trực tiếp.
+>Khi giao diện được mở, chương trình sẽ tự động truy cập vào cơ sở dữ liệu và tính "_Available Balance (VND)_" sau đó điền vào mục cùng tên, mục này người dùng không thể truy cập cũng như sửa đổi trực tiếp.
 >
 >![img_5.png](image/img_5.png)
 
 ### Bảng danh sách giao dịch
 Bảng hiển thị các các đối tượng giao dịch, khi thực hiện các chức năng của chương trình, bảng này cũng sẽ tự động cập nhật theo.
 
-![img_13.png](image%2Fimg_13.png)
+![img_13.png](image/img_13.png)
 
 ### Thao tác thêm, sửa, xóa các đối tượng chi tiêu
 
