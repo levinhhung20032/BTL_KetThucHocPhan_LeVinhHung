@@ -1,9 +1,10 @@
-# Bài tập lớn cuối kì 2 năm học 2022-2023
+# Bài tập lớn môn Lập trình hướng đối tượng
 ## Giới thiệu
-Bài làm của: Lê Vĩnh Hưng
+Bài làm của: Lê Vĩnh Hưng		
 MSV: 21011494   
 Lớp: K15-KHMT   
-Lớp tín chỉ: Lập trình hướng đối tượng-1-2-22(N07)
+Lớp tín chỉ: Lập trình hướng đối tượng-1-2-22(N07)		
+Đề: 8. Quản lý thu chi cá nhân
 
 Em xin cam kết bài làm không được chia sẻ với bất kì ai ngoài giáo viên nhằm tránh hành vi sao chép bài.
 
@@ -46,6 +47,9 @@ Sau khi nhập đúng tài khoản, mật khẩu và nhấn Login, giao diện L
 >![img_5.png](image/img_5.png)
 
 ### Bảng danh sách giao dịch
+Bảng hiển thị các các đối tượng giao dịch, khi thực hiện các chức năng của chương trình, bảng này cũng sẽ tự động cập nhật theo.
+
+![img_13.png](image%2Fimg_13.png)
 
 ### Thao tác thêm, sửa, xóa các đối tượng chi tiêu
 
@@ -54,11 +58,12 @@ Sau khi nhập đúng tài khoản, mật khẩu và nhấn Login, giao diện L
 #### Thêm
 - Nhập thông tin về ngày thực hiện giao dịch vào mục "_Date_" theo định dạng "ngày/tháng/năm".
 - Chọn loại giao dịch ở mục "_Type_".
-- Điền thông tin giao dịch, lời nhắn (nếu có) vào mục Details.
+- Điền thông tin giao dịch, lời nhắn (nếu có) vào mục "_Details_".
 - Điền lượng tiền muốn giao dịch vào mục "_Amount_".
 - Nhấn nút "**Add**" để thực hiện thêm giao dịch.
 - Nếu giao dịch hợp lệ, bảng danh sách giao dịch tự động cập nhật và chương trình hiện thông báo giao dịch thành công.
 - Nhấn nút "**Clear**" để xóa các thông tin trên các thanh ghi và thực hiện thao tác tiếp theo.
+
 ![img_8.png](image/img_8.png)
 > Nếu giao dịch mới khiến lượng tiền chi ra lớn hơn thu vào thì chương trình sẽ hiện thông báo và hủy thao tác đó.
 > 
@@ -70,6 +75,7 @@ Sau khi nhập đúng tài khoản, mật khẩu và nhấn Login, giao diện L
 - Nhấn nút "**Edit**" để thực hiện thay đổi thông tin giao dịch.
 - Nếu thay đổi hợp lệ, bảng danh sách giao dịch tự động cập nhật và chương trình hiện thông báo thay đổi thành công.
 - Nhấn nút "**Clear**" để xóa các thông tin trên các thanh ghi và thực hiện thao tác tiếp theo.
+
 ![img_9.png](image/img_9.png)
 > Nếu giao dịch mới khiến lượng tiền chi ra lớn hơn thu vào thì chương trình sẽ hiện thông báo và hủy thao tác đó.
 >
@@ -80,24 +86,24 @@ Sau khi nhập đúng tài khoản, mật khẩu và nhấn Login, giao diện L
 - Nhấn nút "**Delete**" để thực hiện xóa giao dịch.
 - Nếu thao tác xóa hợp lệ, bảng danh sách giao dịch tự động cập nhật và chương trình hiện thông báo xóa thành công.
 - Nhấn nút "**Clear**" để xóa các thông tin trên các thanh ghi và thực hiện thao tác tiếp theo.
+
 ![img_11.png](image/img_11.png)
 > Nếu giao dịch mới khiến lượng tiền chi ra lớn hơn thu vào thì chương trình sẽ hiện thông báo và hủy thao tác đó.
 >
 >![img_12.png](image/img_12.png)
 ### Thao tác sắp xếp các đối tượng trong bảng
 Chương trình chứa 3 chế độ sắp xếp:
-- Sắp xếp theo lượng tiền của giao dịch (Sort By Amount)
-- Sắp xếp theo thời điểm thực hiện giao dịch (Sort By Date)
-- Sắp xếp theo ID (Sort By ID)
+- Sắp xếp theo lượng tiền của giao dịch (_Sort By Amount_)
+- Sắp xếp theo thời điểm thực hiện giao dịch (_Sort By Date_)
+- Sắp xếp theo ID (_Sort By ID_)
 
 ![img_3.png](image/img_3.png)
 
 ### Thao tác tìm kiếm đối tượng (Thống kê thành bảng)
 Chương trình chứa 2 chế độ tìm kiếm:
-- Tìm kiếm theo thời điểm thực hiện giao dịch (Search By Date)
-- Tìm kiếm theo lượng tiền giao dịch (Search By Amount)
+- Tìm kiếm theo thời điểm thực hiện giao dịch (_Search By Date_)
+- Tìm kiếm theo lượng tiền giao dịch (_Search By Amount_)
 
->Chức năng tìm kiếm có thể kết hợp với chức năng sắp xếp
 ![img_14.png](image/img_14.png)
 
 #### Tìm kiếm theo thời điểm
@@ -107,7 +113,7 @@ Chương trình chứa 2 chế độ tìm kiếm:
 - Nhất nút "**Clear**" (tương tư như thao tác nhập, sửa, xóa) để quay lại danh sách giao dịch ban đầu.
 
 #### Tìm kiếm theo lượng tiền giao dịch
-- Người dùng có thể chọn tìm kiếm theo lượng tiền tối đa (Search By Max Amount) hoặc tối thiểu (Search By Min Amount):
+- Người dùng có thể chọn tìm kiếm theo lượng tiền tối đa (_Search By Max Amount_) hoặc tối thiểu (_Search By Min Amount_):
 	+ Nhập lượng tiền vào thanh ghi bên cạnh chế độ muốn tìm kiếm
     + Nhấn nút tương ứng
 - Nếu tìm thấy kết quả phù hợp, bảng danh sách giao dịch sẽ tự động hiển thị các đối tượng đạt điều kiện.

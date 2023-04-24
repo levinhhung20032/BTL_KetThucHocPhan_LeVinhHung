@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a09ea0e-156e-4b35-92c9-15202a40aa6d" name="Changes" comment="" />
+    <list default="true" id="2a09ea0e-156e-4b35-92c9-15202a40aa6d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/img_13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/dao/FinancialDao$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/dao/FinancialDao$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/dao/FinancialDao$3.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +24,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -39,8 +50,10 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;false&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/ACER/Desktop/Coding Jetbrains/OOP/qlsv-swing&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -56,8 +69,24 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ACER\Desktop\Coding Jetbrains\OOP\BTL_KetThucHocPhan_LeVinhHung\image" />
       <recent name="C:\Users\ACER\Desktop\Coding Jetbrains\OOP\LeVinhHung_21011494_de8_BTCK-main\src\main\java\vn\viettuts\qlsv" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="OOP_LeVinhHung" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="OOP_LeVinhHung" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -86,6 +115,10 @@
       <workItem from="1682270539292" duration="41000" />
       <workItem from="1682301119302" duration="1010000" />
       <workItem from="1682302931753" duration="674000" />
+      <workItem from="1682318781408" duration="256000" />
+      <workItem from="1682319127820" duration="303000" />
+      <workItem from="1682319459294" duration="86000" />
+      <workItem from="1682319587980" duration="42000" />
     </task>
     <servers />
   </component>
