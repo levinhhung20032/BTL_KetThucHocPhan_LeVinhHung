@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<financials>
+    <financial>
+        <id>1</id>
+        <date>2023-04-12</date>
+        <type>Thu</type>
+        <details>LE THANH HUYEN qua sinh nhat</details>
+        <amount>1111111</amount>
+    </financial>
+    <financial>
+        <id>2</id>
+        <date>2023-04-13</date>
+        <type>Chi</type>
+        <details>ACER tien sua laptop</details>
+        <amount>1110000</amount>
+    </financial>
+    <financial>
+        <id>3</id>
+        <date>2023-03-26</date>
+        <type>Thu</type>
+        <details>PHAM GIANG THANH Tro cap tuan nay</details>
+        <amount>500000</amount>
+    </financial>
+    <financial>
+        <id>4</id>
+        <date>2023-03-26</date>
+        <type>Chi</type>
+        <details>Mua hang shopee</details>
+        <amount>100000</amount>
+    </financial>
+    <financial>
+        <id>6</id>
+        <date>2023-03-27</date>
+        <type>Chi</type>
+        <details>Bun dau nuoc nam</details>
+        <amount>35000</amount>
+    </financial>
+    <financial>
+        <id>7</id>
+        <date>2023-03-28</date>
+        <type>Chi</type>
+        <details>Thanh toan hoa don sieu thi</details>
+        <amount>125000</amount>
+    </financial>
+    <financial>
+        <id>8</id>
+        <date>2023-04-10</date>
+        <type>Thu</type>
+        <details>NGUYEN THI TINH tra no</details>
+        <amount>598000</amount>
+    </financial>
+    <financial>
+        <id>9</id>
+        <date>2023-04-14</date>
+        <type>Chi</type>
+        <details>Banh sinh nhat</details>
+        <amount>200000</amount>
+    </financial>
+    <financial>
+        <id>10</id>
+        <date>2023-04-23</date>
+        <type>Chi</type>
+        <details>KFC</details>
+        <amount>215000</amount>
+    </financial>
+    <financial>
+        <id>11</id>
+        <date>2023-04-23</date>
+        <type>Thu</type>
+        <details>Rut tien ve tai khoan</details>
+        <amount>150000</amount>
+    </financial>
+    <financial>
+        <id>17</id>
+        <date>2021-09-08</date>
+        <type>Chi</type>
+        <details>Mua quan ao</details>
+        <amount>250000</amount>
+    </financial>
+    <financial>
+        <id>16</id>
+        <date>2019-07-01</date>
+        <type>Chi</type>
+        <details>Mua qua sinh nhat</details>
+        <amount>120000</amount>
+    </financial>
+    <financial>
+        <id>13</id>
+        <date>2023-04-24</date>
+        <type>Chi</type>
+        <details>Di sieu thi</details>
+        <amount>200000</amount>
+    </financial>
+</financials>
