@@ -13,6 +13,8 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
+import com.github.lgooddatepicker.components.*;
+
 import vn.viettuts.qlsv.entity.Financial;
 import vn.viettuts.qlsv.dao.FinancialDao;
 
@@ -33,7 +35,6 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
     private JTable financialChiTable;
 
     private JTextField idField;
-    private JTextField dateField;
     private JRadioButton typeThuRadio;
     private JRadioButton typeChiRadio;
     private JRadioButton dateDayRadio;
@@ -45,9 +46,11 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
     private JTextField balanceField;
     private JTextField totalThuField;
     private JTextField totalChiField;
-    private JTextField searchFinancialDateField;
+    private JTextField searchFinancialdatePicker;
     private JTextField searchFinancialFromAmountField;
     private JTextField searchFinancialToAmountField;
+
+    private DatePicker datePicker;
 
     // định nghĩa các cột của bảng financial
     private final String [] columnNames = new String [] {
@@ -87,6 +90,14 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
             }
         };
 
+        // khởi tạo lịch
+        datePicker=new DatePicker(new DatePickerSettings());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        datePicker.getComponentToggleCalendarButton().setText("Pick");
+        datePicker.getSettings().setFormatForDatesCommonEra(formatter);
+        datePicker.getSettings().setFormatForDatesBeforeCommonEra(formatter);
+        datePicker.getSettings().setFormatForTodayButton(formatter);
+
         // khởi tạo các label
         JLabel idLabel = new JLabel("Id");
         JLabel thuLabel = new JLabel("Receive");
@@ -119,7 +130,7 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
         // khởi tạo các trường nhập dữ liệu cho financial
         idField = new JTextField(6);
         idField.setEditable(false);
-        dateField = new JTextField(17);
+        datePicker.getComponentDateTextField().setColumns(12);
         detailsTA = new JTextArea();
         detailsTA.setColumns(17);
         detailsTA.setRows(3);
@@ -132,7 +143,7 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
         totalThuField.setEditable(false);
         totalChiField = new JTextField(8);
         totalChiField.setEditable(false);
-        searchFinancialDateField = new JTextField(7);
+        searchFinancialdatePicker = new JTextField(7);
         searchFinancialFromAmountField = new JTextField(7);
         searchFinancialToAmountField = new JTextField(7);
         
@@ -152,7 +163,9 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
         panel.setLayout(layout);
         panel.add(jScrollPaneFinancialThuTable);
         panel.add(jScrollPaneFinancialChiTable);
-        
+
+        panel.add(datePicker);
+
         panel.add(addFinancialBtn);
         panel.add(editFinancialBtn);
         panel.add(deleteFinancialBtn);
@@ -177,7 +190,7 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
         panel.add(totalChiLabel);
         
         panel.add(idField);
-        panel.add(dateField);
+        panel.add(datePicker);
         panel.add(typeThuRadio);
         panel.add(typeChiRadio);
         panel.add(dateDayRadio);
@@ -188,7 +201,7 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
         panel.add(balanceField);
         panel.add(totalThuField);
         panel.add(totalChiField);
-        panel.add(searchFinancialDateField);
+        panel.add(searchFinancialdatePicker);
         panel.add(searchFinancialFromAmountField);
         panel.add(searchFinancialToAmountField);
 
@@ -220,9 +233,9 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
 
         layout.putConstraint(SpringLayout.WEST, idField, 110, SpringLayout.WEST, idLabel);
         layout.putConstraint(SpringLayout.NORTH, idField, 0, SpringLayout.NORTH, idLabel);
-        layout.putConstraint(SpringLayout.WEST, dateField, 0, SpringLayout.WEST, idField);
-        layout.putConstraint(SpringLayout.NORTH, dateField, 0, SpringLayout.NORTH, dateLabel);
-        layout.putConstraint(SpringLayout.WEST, typeThuRadio, 0, SpringLayout.WEST, dateField);
+        layout.putConstraint(SpringLayout.WEST, datePicker, 0, SpringLayout.WEST, idField);
+        layout.putConstraint(SpringLayout.NORTH, datePicker, 0, SpringLayout.NORTH, dateLabel);
+        layout.putConstraint(SpringLayout.WEST, typeThuRadio, 0, SpringLayout.WEST, datePicker);
         layout.putConstraint(SpringLayout.NORTH, typeThuRadio, -3, SpringLayout.NORTH, typeLabel);
         layout.putConstraint(SpringLayout.WEST, typeChiRadio, 70, SpringLayout.WEST, typeThuRadio);
         layout.putConstraint(SpringLayout.NORTH, typeChiRadio, 0, SpringLayout.NORTH, typeThuRadio);
@@ -236,14 +249,14 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
         layout.putConstraint(SpringLayout.NORTH, totalThuField, 420, SpringLayout.NORTH, panel);
         layout.putConstraint(SpringLayout.WEST, totalChiField, 940, SpringLayout.WEST, panel);
         layout.putConstraint(SpringLayout.NORTH, totalChiField, 420, SpringLayout.NORTH, panel);
-        layout.putConstraint(SpringLayout.EAST, searchFinancialDateField, 0, SpringLayout.EAST, amountField);
-        layout.putConstraint(SpringLayout.NORTH, searchFinancialDateField, 100, SpringLayout.NORTH, amountField);
-        layout.putConstraint(SpringLayout.EAST, searchFinancialFromAmountField, 0, SpringLayout.EAST, searchFinancialDateField);
+        layout.putConstraint(SpringLayout.EAST, searchFinancialdatePicker, 0, SpringLayout.EAST, amountField);
+        layout.putConstraint(SpringLayout.NORTH, searchFinancialdatePicker, 100, SpringLayout.NORTH, amountField);
+        layout.putConstraint(SpringLayout.EAST, searchFinancialFromAmountField, 0, SpringLayout.EAST, searchFinancialdatePicker);
         layout.putConstraint(SpringLayout.NORTH, searchFinancialFromAmountField, 0, SpringLayout.NORTH, fromAmountLabel);
-        layout.putConstraint(SpringLayout.EAST, searchFinancialToAmountField, 0, SpringLayout.EAST, searchFinancialDateField);
+        layout.putConstraint(SpringLayout.EAST, searchFinancialToAmountField, 0, SpringLayout.EAST, searchFinancialdatePicker);
         layout.putConstraint(SpringLayout.NORTH, searchFinancialToAmountField, 0, SpringLayout.NORTH, toAmountLabel);
-        layout.putConstraint(SpringLayout.EAST, dateMonthRadio, -10, SpringLayout.WEST, searchFinancialDateField);
-        layout.putConstraint(SpringLayout.NORTH, dateMonthRadio, -3, SpringLayout.NORTH, searchFinancialDateField);
+        layout.putConstraint(SpringLayout.EAST, dateMonthRadio, -10, SpringLayout.WEST, searchFinancialdatePicker);
+        layout.putConstraint(SpringLayout.NORTH, dateMonthRadio, -3, SpringLayout.NORTH, searchFinancialdatePicker);
         layout.putConstraint(SpringLayout.WEST, dateDayRadio, 0, SpringLayout.WEST, dateMonthRadio);
         layout.putConstraint(SpringLayout.NORTH, dateDayRadio, -20, SpringLayout.NORTH, dateMonthRadio);
         layout.putConstraint(SpringLayout.WEST, dateYearRadio, 0, SpringLayout.WEST, dateMonthRadio);
@@ -302,15 +315,15 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
     }
 
     public void showAvailableBalance(int balance){
-        balanceField.setText(""+balance);
+        balanceField.setText(String.format("%,d",balance));
     }
 
     public void showTotalThuBalance(int thu){
-        totalThuField.setText(""+thu);
+        totalThuField.setText(String.format("%,d",thu));
     }
 
     public void showTotalChiBalance(int chi){
-        totalChiField.setText(""+chi);
+        totalChiField.setText(String.format("%,d",chi));
     }
     public void showMessage(String message) {
         JOptionPane.showMessageDialog(this, message);
@@ -349,14 +362,14 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
                 financialsThu[countThu][1] = financial.getDate().format(DateTimeFormatter.ofPattern("dd/MM/uuuu"));
                 financialsThu[countThu][2] = financial.getType();
                 financialsThu[countThu][3] = financial.getDetails();
-                financialsThu[countThu][4] = financial.getAmount();
+                financialsThu[countThu][4] = String.format("%,d",financial.getAmount());
                 countThu++;
             } else {
                 financialsChi[countChi][0] = financial.getId();
                 financialsChi[countChi][1] = financial.getDate().format(DateTimeFormatter.ofPattern("dd/MM/uuuu"));
                 financialsChi[countChi][2] = financial.getType();
                 financialsChi[countChi][3] = financial.getDetails();
-                financialsChi[countChi][4] = financial.getAmount();
+                financialsChi[countChi][4] = String.format("%,d",financial.getAmount());
                 countChi++;
             }
         }
@@ -393,16 +406,19 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
      */
     public void fillFinancialThuFromSelectedRow() {
         // lấy chỉ số của hàng được chọn
-        financialChiTable.clearSelection();
         int row = financialThuTable.getSelectedRow();
         if (row >= 0) {
             idField.setText(financialThuTable.getModel().getValueAt(row, 0).toString());
-            dateField.setText(financialThuTable.getModel().getValueAt(row, 1).toString());
+            datePicker.setText(financialThuTable.getModel().getValueAt(row, 1).toString());
             if (financialThuTable.getModel().getValueAt(row, 2).toString().equals("Thu")){
                 typeThuRadio.doClick();
             } else typeChiRadio.doClick();
             detailsTA.setText(financialThuTable.getModel().getValueAt(row, 3).toString());
-            amountField.setText(financialThuTable.getModel().getValueAt(row, 4).toString());
+            String[] temp = financialThuTable.getModel().getValueAt(row, 4).toString().split("\\.");
+            for (int i = 1; i < temp.length; i++) {
+                temp[0]+=temp[i];
+            }
+            amountField.setText(temp[0]);
             // enable Edit and Delete buttons
             editFinancialBtn.setEnabled(true);
             deleteFinancialBtn.setEnabled(true);
@@ -417,16 +433,19 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
      */
     public void fillFinancialChiFromSelectedRow() {
         // lấy chỉ số của hàng được chọn
-        financialThuTable.clearSelection();
         int row = financialChiTable.getSelectedRow();
         if (row >= 0) {
             idField.setText(financialChiTable.getModel().getValueAt(row, 0).toString());
-            dateField.setText(financialChiTable.getModel().getValueAt(row, 1).toString());
+            datePicker.setText(financialChiTable.getModel().getValueAt(row, 1).toString());
             if (financialChiTable.getModel().getValueAt(row, 2).toString().equals("Chi")){
                 typeChiRadio.doClick();
             } else typeChiRadio.doClick();
             detailsTA.setText(financialChiTable.getModel().getValueAt(row, 3).toString());
-            amountField.setText(financialChiTable.getModel().getValueAt(row, 4).toString());
+            String[] temp = financialChiTable.getModel().getValueAt(row, 4).toString().split("\\.");
+            for (int i = 1; i < temp.length; i++) {
+                temp[0]+=temp[i];
+            }
+            amountField.setText(temp[0]);
             // enable Edit and Delete buttons
             editFinancialBtn.setEnabled(true);
             deleteFinancialBtn.setEnabled(true);
@@ -440,11 +459,14 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
      */
     public void clearFinancialInfo() {
         idField.setText("");
-        dateField.setText("");
+        datePicker.setText("");
         typeRadio.clearSelection();
         detailsTA.setText("");
         amountField.setText("");
-        searchFinancialDateField.setText("");
+        searchFinancialdatePicker.setText("");
+        dateDayRadio.setSelected(false);
+        dateMonthRadio.setSelected(false);
+        dateYearRadio.setSelected(false);
         searchFinancialFromAmountField.setText("");
         searchFinancialToAmountField.setText("");
         // disable Edit and Delete buttons
@@ -460,7 +482,7 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
     public void showFinancial(Financial financial) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/uuuu");
         idField.setText("" + financial.getId());
-        dateField.setText(financial.getDate().format(formatter));
+        datePicker.setText(financial.getDate().format(formatter));
         if (financial.getType().equals("Thu")){
             typeThuRadio.doClick();
         } else typeChiRadio.doClick();
@@ -486,7 +508,7 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
             if (idField.getText() != null && !"".equals(idField.getText())) {
                 financial.setId(Integer.parseInt(idField.getText()));
             }
-            String[] date = dateField.getText().split("/");
+            String[] date = datePicker.getText().split("/");
             int day=Integer.parseInt(date[0]);
             int month=Integer.parseInt(date[1]);
             int year=Integer.parseInt(date[2]);
@@ -503,12 +525,17 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
     }
 
     public int[] getSearchDate(){
-        if (searchFinancialDateField.getText()==null) return null;
-        String[] date = searchFinancialDateField.getText().split("/");
-        int[] int_date = new int[date.length];
+        if (searchFinancialdatePicker.getText()==null || "".equals(searchFinancialdatePicker.getText().trim())) return new int[4];
+        boolean[] check = checkSelectionSearchDate();
+        String[] date = searchFinancialdatePicker.getText().split("/");
+        int[] int_date = new int[3];
         try {
-            for (int i = 0; i < date.length; i++) {
-                int_date[i] = Integer.parseInt(date[i]);
+            int count=0;
+            for (int i = 0; i < 3; i++) {
+                if (check[i]) {
+                    int_date[i] = Integer.parseInt(date[count]);
+                    count++;
+                }
             }
             return int_date;
         } catch (Exception e){
@@ -516,12 +543,20 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
         }
     }
 
-    public int getSearchMinAmount(){
+    public boolean[] checkSelectionSearchDate(){
+        boolean[] check = new boolean[3];
+        if (dateDayRadio.isSelected()) check[0]=true;
+        if (dateMonthRadio.isSelected()) check[1]=true;
+        if (dateYearRadio.isSelected()) check[2]=true;
+        return check;
+    }
+
+    public int getSearchFromAmount(){
         if (searchFinancialFromAmountField.getText().equals("")) return -999;
         else return Integer.parseInt(searchFinancialFromAmountField.getText());
     }
 
-    public int getSearchMaxAmount(){
+    public int getSearchToAmount(){
         if (searchFinancialToAmountField.getText().equals("")) return -999;
         else return Integer.parseInt(searchFinancialToAmountField.getText());
     }
@@ -532,9 +567,9 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
 
     private boolean validateDate() {
         try {
-            String date = dateField.getText();
+            String date = datePicker.getText();
             if (date == null || "".equals(date.trim())) {
-                dateField.requestFocus();
+                datePicker.requestFocus();
                 showMessage("Date is empty!");
                 return false;
             }
@@ -544,7 +579,7 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
                 return false;
             }
         } catch (Exception e) {
-            dateField.requestFocus();
+            datePicker.requestFocus();
             showMessage("Invalid Date, Date must be day/month/year!");
             return false;
         }

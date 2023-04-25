@@ -50,8 +50,13 @@ public class FinancialDao {
      */
     public void add(Financial financial) {
         int id = 1;
-        if (listFinancials != null && listFinancials.size() > 0) {
-            id = listFinancials.size() + 1;
+        sortFinancialByID();
+        if(listFinancials.get(0).getId()==id) {
+            for (int i = 1; i < listFinancials.size()-1; i++) {
+                if (listFinancials.get(i).getId() - listFinancials.get(i - 1).getId() >= 2) {
+                    id = listFinancials.get(i - 1).getId() + 1;
+                }
+            }
         }
         financial.setId(id);
         listFinancials.add(financial);

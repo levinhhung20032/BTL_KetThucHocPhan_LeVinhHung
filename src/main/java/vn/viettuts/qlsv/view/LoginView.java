@@ -3,15 +3,7 @@ package vn.viettuts.qlsv.view;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-import javax.swing.SpringLayout;
-import javax.swing.WindowConstants;
+import javax.swing.*;
 
 import vn.viettuts.qlsv.entity.User;
 
@@ -20,6 +12,7 @@ public class LoginView extends JFrame implements ActionListener {
     private JPasswordField passwordField;
     private JTextField userNameField;
     private JButton loginBtn;
+    private JLabel image;
 
     public LoginView() {
         initComponents();
@@ -29,6 +22,7 @@ public class LoginView extends JFrame implements ActionListener {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         JLabel userNameLabel = new JLabel("Username");
         JLabel passwordlabel = new JLabel("Password");
+        image.setIcon(new ImageIcon("PKA.png"));
         userNameField = new JTextField(15);
         passwordField = new JPasswordField(15);
         loginBtn = new JButton();
@@ -42,6 +36,7 @@ public class LoginView extends JFrame implements ActionListener {
         // tạo đối tượng panel để chứa các thành phần của màn hình login
         panel.setSize(400, 300);
         panel.setLayout(layout);
+        panel.add(image);
         panel.add(userNameLabel);
         panel.add(passwordlabel);
         panel.add(userNameField);

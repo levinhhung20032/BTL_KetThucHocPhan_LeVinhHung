@@ -15,18 +15,11 @@
         <amount>1110000</amount>
     </financial>
     <financial>
-        <id>3</id>
-        <date>2023-03-26</date>
-        <type>Thu</type>
-        <details>PHAM GIANG THANH Tro cap tuan nay</details>
-        <amount>500000</amount>
-    </financial>
-    <financial>
         <id>4</id>
-        <date>2023-03-26</date>
+        <date>2021-06-15</date>
         <type>Chi</type>
-        <details>Mua hang shopee</details>
-        <amount>100000</amount>
+        <details></details>
+        <amount>10000</amount>
     </financial>
     <financial>
         <id>7</id>
@@ -65,24 +58,10 @@
     </financial>
     <financial>
         <id>12</id>
-        <date>2023-03-13</date>
-        <type>Chi</type>
-        <details>Sinh nhật bạn cùng lớp</details>
-        <amount>150000</amount>
-    </financial>
-    <financial>
-        <id>13</id>
-        <date>2023-02-01</date>
+        <date>2023-04-12</date>
         <type>Thu</type>
-        <details>Nhận lương tháng 1</details>
-        <amount>2500000</amount>
-    </financial>
-    <financial>
-        <id>14</id>
-        <date>2023-02-10</date>
-        <type>Chi</type>
-        <details>Mua giày</details>
-        <amount>2100000</amount>
+        <details>Mẹ cho tiền</details>
+        <amount>120000</amount>
     </financial>
     <financial>
         <id>17</id>
@@ -90,5 +69,12 @@
         <type>Chi</type>
         <details>Mua quan ao</details>
         <amount>250000</amount>
+    </financial>
+    <financial>
+        <id>5</id>
+        <date>2023-04-12</date>
+        <type>Thu</type>
+        <details>Ăn trưa</details>
+        <amount>25000</amount>
     </financial>
 </financials>

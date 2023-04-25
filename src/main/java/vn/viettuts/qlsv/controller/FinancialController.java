@@ -2,7 +2,6 @@ package vn.viettuts.qlsv.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -181,63 +180,90 @@ public class FinancialController {
      */
     class SearchFinancialDateListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            // Kiểm tra đã điền thanh search chưa
-            if (financialView.getSearchDate()==null) {
-                financialView.showMessage("Blank search box!");
-                return;
-            }
-            boolean check_found = false, check_error=false;
-            int[] date=financialView.getSearchDate();
-            List<Financial> financials = financialDao.getListFinancials();
-            List<Financial> found  = new ArrayList<>();
-            if (date.length==0){
-                check_error=true;
-            }
-            else if (date.length==1) {
-                for (Financial financial : financials) {
-                    if (financial.getDate().getYear()==date[0]) {
-                        check_found = true;
-                        found.add(financial);
+            {
+                boolean check_found = false, check_error = false;
+                int[] search_date = financialView.getSearchDate(), date = new int[3];
+                if(search_date.length==4) {
+                    financialView.showMessage("Blank Search Box!");
+                    return;
+                }
+                boolean[] check = financialView.checkSelectionSearchDate();
+                int check_count = 0;
+                List<Financial> financials = financialDao.getListFinancials();
+                List<Financial> found = new ArrayList<>();
+                for (boolean b : check) {
+                    if (b) check_count++;
+                }
+                if (search_date.length == 0) {
+                    check_error = true;
+                } else {
+                    if (check_count == 0) {
+                        financialView.showMessage("Please Select Search Type!");
+                        return;
+                    } else if (check_count == 1) {
+                        for (Financial financial : financials) {
+                            date[0] = financial.getDate().getDayOfMonth();
+                            date[1] = financial.getDate().getMonthValue();
+                            date[2] = financial.getDate().getYear();
+                            if ((check[0] && search_date[0] == date[0])) {
+                                check_found = true;
+                                found.add(financial);
+                            } else if ((check[1] && search_date[1] == date[1])) {
+                                check_found = true;
+                                found.add(financial);
+                            } else if ((check[2] && search_date[2] == date[2])) {
+                                check_found = true;
+                                found.add(financial);
+                            }
+                        }
+                    } else if (check_count == 2) {
+                        for (Financial financial : financials) {
+                            date[0] = financial.getDate().getDayOfMonth();
+                            date[1] = financial.getDate().getMonthValue();
+                            date[2] = financial.getDate().getYear();
+                            if ((check[0] && search_date[0] == date[0]) && (check[1] && search_date[1] == date[1])) {
+                                check_found = true;
+                                found.add(financial);
+                            } else if ((check[0] && search_date[0] == date[0]) && (check[2] && search_date[2] == date[2])) {
+                                check_found = true;
+                                found.add(financial);
+                            } else if ((check[2] && search_date[2] == date[2]) && (check[1] && search_date[1] == date[1])) {
+                                check_found = true;
+                                found.add(financial);
+                            }
+                        }
+                    } else if (check_count == 3) {
+                        for (Financial financial : financials) {
+                            date[0] = financial.getDate().getDayOfMonth();
+                            date[1] = financial.getDate().getMonthValue();
+                            date[2] = financial.getDate().getYear();
+                            if ((check[0] && search_date[0] == date[0]) && (check[1] && search_date[1] == date[1]) && (check[2] && search_date[2] == date[2])) {
+                                check_found = true;
+                                found.add(financial);
+                            }
+                        }
                     }
                 }
-            }
-            else if (date.length==2){
-                for (Financial financial : financials) {
-                    if (financial.getDate().getMonthValue()==date[0] && financial.getDate().getYear()==date[1]) {
-                        check_found = true;
-                        found.add(financial);
-                    }
+                if (check_error) {
+                    financialView.showMessage("Invalid Date, Date should be \"day/month/year\"");
+                } else if (!check_found) {
+                    financialView.showMessage("Not found!");
+                } else {
+                    int balance = 0;
+                    financialView.showListFinancials(found);
                 }
-            }
-            else if (date.length==3){
-                for (Financial financial : financials) {
-                    if (financial.getDate().equals(LocalDate.of(date[2], date[1], date[0]))) {
-                        check_found = true;
-                        found.add(financial);
-                    }
-                }
-            }
-            if (check_error) {
-                financialView.showMessage("Date should be \"day/month/year\"");
-            }
-            else if (!check_found) {
-                financialView.showMessage("Not found!");
-            }
-            else {
-                int balance=0;
-                financialView.showListFinancials(found);
             }
         }
     }
 
     /**
      * Lớp SearchFinancialAmountListener
-     * chứa cài đặt cho sự kiện click button "Search By Min Amount"
+     * chứa cài đặt cho sự kiện click button "Search By Amount"
      */
     class SearchFinancialAmountListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             // Kiểm tra đã điền thanh search chưa
-            if (financialView.getSearchMinAmount()==-999) {
+            if (financialView.getSearchFromAmount()==-999) {
                 financialView.showMessage("Blank search box!");
                 return;
             }
@@ -245,7 +271,7 @@ public class FinancialController {
             List<Financial> financials = financialDao.getListFinancials();
             List<Financial> found  = new ArrayList<>();
             for (Financial financial : financials) {
-                if (financial.getAmount()>=financialView.getSearchMinAmount()) {
+                if (financialView.getSearchToAmount()>=financial.getAmount() && financial.getAmount()>=financialView.getSearchFromAmount()) {
                     check = true;
                     found.add(financial);
                 }
@@ -265,7 +291,7 @@ public class FinancialController {
     class SearchFinancialMaxAmountListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             // Kiểm tra đã điền thanh search chưa
-            if (financialView.getSearchMaxAmount()==-999) {
+            if (financialView.getSearchToAmount()==-999) {
                 financialView.showMessage("Blank search box!");
                 return;
             }
@@ -273,7 +299,7 @@ public class FinancialController {
             List<Financial> financials = financialDao.getListFinancials();
             List<Financial> found  = new ArrayList<>();
             for (Financial financial : financials) {
-                if (financial.getAmount()<=financialView.getSearchMaxAmount()) {
+                if (financial.getAmount()<=financialView.getSearchToAmount()) {
                     check = true;
                     found.add(financial);
                 }
