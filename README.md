@@ -11,8 +11,23 @@ Em xin cam kết bài làm không được chia sẻ với bất kì ai ngoài g
 Lưu ý: Bài làm được thực hiện trên IntelliJ IDEA, có thể sẽ không tương thích hoặc xảy ra lỗi khi chạy trên các IDE khác, mong thầy/cô điều chỉnh giúp em hoặc liên hệ trực tiếp với em qua mail 21011494@st.phenikaa-uni.edu.vn.
 
 ## Cấu trúc bài làm
+### Về phần file exe trong tệp nén
 
-Toàn bộ chương trình được chứa trong trong thư mục "_src_"
+Sau khi giải nén, người dùng sẽ thấy những file như sau:
+
+![img.png](image/img_19.png)
+
+- File khởi động: ***Financial.exe***
+- Cơ sở dữ liệu: ***financial.xml***
+- Để chạy được file exe, thiết bị phải được tải sẵn JDK và JRE ở phiên bản mới nhất, trong tệp nén đã có chứa sẵn link dẫn tới trang web có thể tải 2 phần mềm này.
+	+ Sau khi tải, hãy chắc chắn chúng được cài đặt tới đường dẫn "C:\Program Files (x86)\Java".
+    + Sau khi cài đặt thành công 2 phần mềm, mở "Edit the system environment variables", chọn "Environment Variables...", điền đường dẫn đến thư mục "_bin_" của 2 phần mềm trên vào mỗi mục PATH của cửa sổ hiện ra (hãy để đường dẫn của JDK 20 ở trên JRE 1.8 nhằm đảm bảo sự ưu tiên).
+
+![img.png](img_20.png)
+
+### Về phần code trên GitHub
+
+Toàn bộ chương trình được chứa trong trong thư mục "_src_", trừ cơ sở dữ liệu được chưa cạnh "_src_".
 
 ![img.png](image/img.png)
 
@@ -24,13 +39,13 @@ Toàn bộ chương trình được chứa trong trong thư mục "_src_"
 	+ Package _entity_: chứa các phương thức khởi tạo, đọc, thêm, sửa, xóa đối tượng.
 	+ Package _utils_: chứa các phương thức đọc và ghi file XML.
 	+ Package _view_: chứa các chương trình tạo giao diện
-## Hướng dẫn sử dụng chương trình
-### Khởi động
-Sau khi chạy file ***App.java***, chương trình sẽ mở giao diện Login như sau:
+### Hướng dẫn sử dụng chương trình
+#### Khởi động
+Sau khi chạy file ***App.java*** hoặc file ***Financial.txt***, chương trình sẽ mở giao diện Login như sau:
 
 ![img_2.png](image/img_2.png)
 
-> Vì đây là thông tin cá nhân, ta cần đăng nhập với tài khoản và mật khẩu nhằm đảm bảo tính bảo mật. Theo mặc định, tên tài khoản là "_username_"  và mật khẩu là "_password_". Nếu có mong muốn thay đổi, truy cập file ***UserDao.java***, thay đổi "username" thành **String** chứa tên tài khoản mong muốn và thay đổi "password" thành **String** chứa mật khẩu mong muốn.
+> Vì đây là thông tin cá nhân, ta cần đăng nhập với tài khoản và mật khẩu nhằm đảm bảo tính bảo mật. Theo mặc định, tên tài khoản là "_username_"  và mật khẩu là "_password_". Nếu có mong muốn thay đổi, truy cập file ***UserDao.java*** theo đường dẫn ".../src/main/java/vn/viettuts/qlsv/dao/UserDao.java", thay đổi "username" thành **String** chứa tên tài khoản mong muốn và thay đổi "password" thành **String** chứa mật khẩu mong muốn.
 >
 > ![img_1.png](image/img_1.png)
 
@@ -38,7 +53,7 @@ Nhập tài khoản và mật khẩu của bạn và nhấn Login. Nếu nhập 
 
 ![img_3.png](image/img_3.png)
 
-### Đăng nhập thành công
+#### Đăng nhập thành công
 Sau khi nhập đúng tài khoản, mật khẩu và nhấn Login, giao diện Login sẽ đóng lại và chương trình tự động mở giao diện quản lý giao dịch:
 
 ![img_4.png](image/img_4.png)
@@ -51,15 +66,15 @@ Sau khi nhập đúng tài khoản, mật khẩu và nhấn Login, giao diện L
 > 
 > ![img_7.png](image/img_7.png)
 
-### Bảng danh sách giao dịch
+#### Bảng danh sách giao dịch
 Bảng hiển thị các các đối tượng giao dịch, khi thực hiện các chức năng của chương trình, bảng này cũng sẽ tự động cập nhật theo.
 
 ![img_8.png](image/img_8.png)
 
-### Thao tác thêm, sửa, xóa các đối tượng giao dịch
+#### Thao tác thêm, sửa, xóa các đối tượng giao dịch
 ![img_9.png](image/img_9.png)
 
-#### Thêm
+##### Thêm
 - Nhấn nút "**Pick**" để mở của sổ lịch, chọn ngày, tháng, năm mong muốn.
 - Chọn loại giao dịch ở mục "_Type_".
 - Điền thông tin giao dịch, lời nhắn (nếu có) vào mục "_Details_".
@@ -73,7 +88,7 @@ Bảng hiển thị các các đối tượng giao dịch, khi thực hiện cá
 > Nếu giao dịch mới khiến lượng tiền chi ra lớn hơn thu vào thì chương trình sẽ hiện thông báo và hủy thao tác đó.
 > 
 > ![img_10.png](image/img_10.png)
-#### Sửa
+##### Sửa
 - Chọn mục cần sửa trên bảng danh sách giao dịch.
 - Thông tin về giao dịch đó sẽ tự động được điền vào các mục tương ứng.
 - Thay đổi những thông tin mong muốn.
@@ -86,7 +101,7 @@ Bảng hiển thị các các đối tượng giao dịch, khi thực hiện cá
 > Nếu giao dịch mới khiến lượng tiền chi ra lớn hơn thu vào thì chương trình sẽ hiện thông báo và hủy thao tác đó.
 >
 > ![img_12.png](image/img_12.png)
-#### Xóa
+##### Xóa
 - Chọn mục cần xóa trên bảng danh sách giao dịch.
 - Thông tin về giao dịch đó sẽ tự động được điền vào các mục.
 - Nhấn nút "**Delete**" để thực hiện xóa giao dịch.
@@ -98,7 +113,7 @@ Bảng hiển thị các các đối tượng giao dịch, khi thực hiện cá
 > Nếu giao dịch mới khiến lượng tiền chi ra lớn hơn thu vào thì chương trình sẽ hiện thông báo và hủy thao tác đó.
 >
 > ![img_14.png](image/img_14.png)
-### Thao tác sắp xếp các đối tượng trong bảng
+#### Thao tác sắp xếp các đối tượng trong bảng
 Chương trình chứa 3 chế độ sắp xếp:
 - Sắp xếp theo lượng tiền của giao dịch (_Sort By Amount_)
 - Sắp xếp theo thời điểm thực hiện giao dịch (_Sort By Date_)
@@ -106,14 +121,14 @@ Chương trình chứa 3 chế độ sắp xếp:
 
 ![img_16.png](image/img_16.png)
 
-### Thao tác tìm kiếm đối tượng (Thống kê thành bảng)
+#### Thao tác tìm kiếm đối tượng (Thống kê thành bảng)
 Chương trình chứa 2 chế độ tìm kiếm:
 - Tìm kiếm theo thời điểm thực hiện giao dịch (_Search By Date_)
 - Tìm kiếm theo lượng tiền giao dịch (_Search By Amount_)
 
 ![img_17.png](image/img_17.png)
 
-#### Tìm kiếm theo thời điểm thực hiện giao dịch
+##### Tìm kiếm theo thời điểm thực hiện giao dịch
 - Người dùng chọn các mục "_day_", "_month_", "_year_" tùy theo mong muốn tìm kiếm.
 - Người dùng nhập nội dung tìm kiếm và thanh ghi bên phải, nếu đã chọn nhiều hơn 1 mục thì các mục phải ngăn cách nhau bằng dấu "/" và theo thứ tự ngày, tháng, năm.
 	+ Ví dụ: Người dùng chọn "_day_" và "_year_" sau đó nhập "4/2023", bảng danh sách giao dịch sẽ hiển thị những giao dịch vào ngày 4 và năm 2023 (có thể xuất hiện nhiều tháng).
@@ -123,7 +138,7 @@ Chương trình chứa 2 chế độ tìm kiếm:
 > Nếu không tìm thấy kết quả phù hợp, chương trình sẽ hiện thông báo.
 >
 > ![img_18.png](image/img_18.png)
-#### Tìm kiếm theo lượng tiền giao dịch
+##### Tìm kiếm theo lượng tiền giao dịch
 - Người dùng nhập thông tin về lượng tiền tối thiểu và tối đa vào ô tương ứng.
 	+ Nếu người dùng chỉ nhập 1 trong 2 ô, ô còn lại sẽ nhận giá trị mặc định ("_From:_" sẽ nhận 0 và "_To:_" sẽ nhận &infin;)
 - Nhấn nút "**Search By Amount**".
