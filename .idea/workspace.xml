@@ -9,13 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a09ea0e-156e-4b35-92c9-15202a40aa6d" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/image/img_19.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/img.png" beforeDir="false" afterPath="$PROJECT_DIR$/image/img.png" afterDir="false" />
-    </list>
+    <list default="true" id="2a09ea0e-156e-4b35-92c9-15202a40aa6d" name="Changes" comment="update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -132,7 +126,7 @@
       <workItem from="1682428221432" duration="69000" />
       <workItem from="1682431215218" duration="24000" />
       <workItem from="1682431719224" duration="1774000" />
-      <workItem from="1682433682842" duration="390000" />
+      <workItem from="1682433682842" duration="972000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1682320061360</created>
@@ -232,7 +226,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682431224451</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="update">
+      <created>1682434603916</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1682434603916</updated>
+    </task>
+    <task id="LOCAL-00016" summary="update">
+      <created>1682434636103</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1682434636103</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
