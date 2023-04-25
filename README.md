@@ -116,7 +116,7 @@ Chương trình chứa 2 chế độ tìm kiếm:
 #### Tìm kiếm theo thời điểm thực hiện giao dịch
 - Người dùng chọn các mục "_day_", "_month_", "_year_" tùy theo mong muốn tìm kiếm.
 - Người dùng nhập nội dung tìm kiếm và thanh ghi bên phải, nếu đã chọn nhiều hơn 1 mục thì các mục phải ngăn cách nhau bằng dấu "/" và theo thứ tự ngày, tháng, năm.
-	+ Ví dụ: Người dùng chọn "_day_" và "_year_" sau đó nhập "4/2023", bảng danh sách giao dịch sẽ hiển thị những giao dịch vào ngày 4 và năm 2023 (có thể xất hiện nhiều tháng).
+	+ Ví dụ: Người dùng chọn "_day_" và "_year_" sau đó nhập "4/2023", bảng danh sách giao dịch sẽ hiển thị những giao dịch vào ngày 4 và năm 2023 (có thể xuất hiện nhiều tháng).
 - Nhấn nút "**Search By Date**".
 - Bảng danh sách giao dịch sẽ tự động hiển thị các giao dịch đạt điều kiện.
 - Nhất nút "**Clear**" (tương tư như thao tác nhập, sửa, xóa) để quay lại danh sách giao dịch ban đầu.
