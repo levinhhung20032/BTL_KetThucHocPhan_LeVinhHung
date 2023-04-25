@@ -49,9 +49,8 @@ public class FinancialDao {
      * thêm financial vào listFinancials và lưu listFinancials vào file
      */
     public void add(Financial financial) {
-        int id = 1;
         sortFinancialByID();
-        id=listFinancials.get(listFinancials.size()-1).getId()+1;
+        int id=listFinancials.get(listFinancials.size()-1).getId()+1;
         financial.setId(id);
         listFinancials.add(financial);
         writeListFinancials(listFinancials);
