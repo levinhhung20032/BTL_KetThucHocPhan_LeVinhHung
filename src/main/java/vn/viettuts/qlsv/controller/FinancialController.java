@@ -263,17 +263,31 @@ public class FinancialController {
     class SearchFinancialAmountListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             // Kiểm tra đã điền thanh search chưa
-            if (financialView.getSearchFromAmount()==-999) {
-                financialView.showMessage("Blank search box!");
+            if (financialView.getSearchFromAmount()==-1 && financialView.getSearchToAmount()==-1) {
+                financialView.showMessage("Blank Search Boxes!");
                 return;
             }
             boolean check = false;
             List<Financial> financials = financialDao.getListFinancials();
             List<Financial> found  = new ArrayList<>();
             for (Financial financial : financials) {
-                if (financialView.getSearchToAmount()>=financial.getAmount() && financial.getAmount()>=financialView.getSearchFromAmount()) {
-                    check = true;
-                    found.add(financial);
+                if (financialView.getSearchFromAmount()==-1 && financialView.getSearchToAmount()!=-1) {
+                    if (financial.getAmount()<=financialView.getSearchToAmount()){
+                        check = true;
+                        found.add(financial);
+                    }
+                }
+                else if (financialView.getSearchFromAmount()!=-1 && financialView.getSearchToAmount()==-1) {
+                    if (financial.getAmount()>=financialView.getSearchFromAmount()){
+                        check = true;
+                        found.add(financial);
+                    }
+                }
+                else {
+                    if (financial.getAmount() <= financialView.getSearchToAmount() && financial.getAmount() >= financialView.getSearchFromAmount()) {
+                        check = true;
+                        found.add(financial);
+                    }
                 }
             }
             if (!check) {

@@ -51,13 +51,7 @@ public class FinancialDao {
     public void add(Financial financial) {
         int id = 1;
         sortFinancialByID();
-        if(listFinancials.get(0).getId()==id) {
-            for (int i = 1; i < listFinancials.size()-1; i++) {
-                if (listFinancials.get(i).getId() - listFinancials.get(i - 1).getId() >= 2) {
-                    id = listFinancials.get(i - 1).getId() + 1;
-                }
-            }
-        }
+        id=listFinancials.get(listFinancials.size()-1).getId()+1;
         financial.setId(id);
         listFinancials.add(financial);
         writeListFinancials(listFinancials);
@@ -99,7 +93,7 @@ public class FinancialDao {
     }
 
     /**
-     * sắp xếp danh sách financial theo date theo tứ tự tăng dần
+     * sắp xếp danh sách financial theo Date theo tứ tự tăng dần
      */
     public void sortFinancialByDate() {
         listFinancials.sort(Comparator.comparing(Financial::getDate));
@@ -130,6 +124,7 @@ public class FinancialDao {
     }
 
     public List<Financial> getListFinancials() {
+        sortFinancialByID();
         return listFinancials;
     }
 

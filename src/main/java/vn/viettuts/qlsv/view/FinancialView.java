@@ -46,7 +46,7 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
     private JTextField balanceField;
     private JTextField totalThuField;
     private JTextField totalChiField;
-    private JTextField searchFinancialdatePicker;
+    private JTextField searchFinancialdateField;
     private JTextField searchFinancialFromAmountField;
     private JTextField searchFinancialToAmountField;
 
@@ -131,6 +131,7 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
         idField = new JTextField(6);
         idField.setEditable(false);
         datePicker.getComponentDateTextField().setColumns(12);
+        datePicker.getComponentDateTextField().setEditable(false);
         detailsTA = new JTextArea();
         detailsTA.setColumns(17);
         detailsTA.setRows(3);
@@ -143,7 +144,7 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
         totalThuField.setEditable(false);
         totalChiField = new JTextField(8);
         totalChiField.setEditable(false);
-        searchFinancialdatePicker = new JTextField(7);
+        searchFinancialdateField = new JTextField(7);
         searchFinancialFromAmountField = new JTextField(7);
         searchFinancialToAmountField = new JTextField(7);
         
@@ -190,7 +191,6 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
         panel.add(totalChiLabel);
         
         panel.add(idField);
-        panel.add(datePicker);
         panel.add(typeThuRadio);
         panel.add(typeChiRadio);
         panel.add(dateDayRadio);
@@ -201,7 +201,7 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
         panel.add(balanceField);
         panel.add(totalThuField);
         panel.add(totalChiField);
-        panel.add(searchFinancialdatePicker);
+        panel.add(searchFinancialdateField);
         panel.add(searchFinancialFromAmountField);
         panel.add(searchFinancialToAmountField);
 
@@ -249,14 +249,14 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
         layout.putConstraint(SpringLayout.NORTH, totalThuField, 420, SpringLayout.NORTH, panel);
         layout.putConstraint(SpringLayout.WEST, totalChiField, 940, SpringLayout.WEST, panel);
         layout.putConstraint(SpringLayout.NORTH, totalChiField, 420, SpringLayout.NORTH, panel);
-        layout.putConstraint(SpringLayout.EAST, searchFinancialdatePicker, 0, SpringLayout.EAST, amountField);
-        layout.putConstraint(SpringLayout.NORTH, searchFinancialdatePicker, 100, SpringLayout.NORTH, amountField);
-        layout.putConstraint(SpringLayout.EAST, searchFinancialFromAmountField, 0, SpringLayout.EAST, searchFinancialdatePicker);
+        layout.putConstraint(SpringLayout.EAST, searchFinancialdateField, 0, SpringLayout.EAST, amountField);
+        layout.putConstraint(SpringLayout.NORTH, searchFinancialdateField, 100, SpringLayout.NORTH, amountField);
+        layout.putConstraint(SpringLayout.EAST, searchFinancialFromAmountField, 0, SpringLayout.EAST, searchFinancialdateField);
         layout.putConstraint(SpringLayout.NORTH, searchFinancialFromAmountField, 0, SpringLayout.NORTH, fromAmountLabel);
-        layout.putConstraint(SpringLayout.EAST, searchFinancialToAmountField, 0, SpringLayout.EAST, searchFinancialdatePicker);
+        layout.putConstraint(SpringLayout.EAST, searchFinancialToAmountField, 0, SpringLayout.EAST, searchFinancialdateField);
         layout.putConstraint(SpringLayout.NORTH, searchFinancialToAmountField, 0, SpringLayout.NORTH, toAmountLabel);
-        layout.putConstraint(SpringLayout.EAST, dateMonthRadio, -10, SpringLayout.WEST, searchFinancialdatePicker);
-        layout.putConstraint(SpringLayout.NORTH, dateMonthRadio, -3, SpringLayout.NORTH, searchFinancialdatePicker);
+        layout.putConstraint(SpringLayout.EAST, dateMonthRadio, -10, SpringLayout.WEST, searchFinancialdateField);
+        layout.putConstraint(SpringLayout.NORTH, dateMonthRadio, -3, SpringLayout.NORTH, searchFinancialdateField);
         layout.putConstraint(SpringLayout.WEST, dateDayRadio, 0, SpringLayout.WEST, dateMonthRadio);
         layout.putConstraint(SpringLayout.NORTH, dateDayRadio, -20, SpringLayout.NORTH, dateMonthRadio);
         layout.putConstraint(SpringLayout.WEST, dateYearRadio, 0, SpringLayout.WEST, dateMonthRadio);
@@ -463,7 +463,7 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
         typeRadio.clearSelection();
         detailsTA.setText("");
         amountField.setText("");
-        searchFinancialdatePicker.setText("");
+        searchFinancialdateField.setText("");
         dateDayRadio.setSelected(false);
         dateMonthRadio.setSelected(false);
         dateYearRadio.setSelected(false);
@@ -525,9 +525,9 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
     }
 
     public int[] getSearchDate(){
-        if (searchFinancialdatePicker.getText()==null || "".equals(searchFinancialdatePicker.getText().trim())) return new int[4];
+        if (searchFinancialdateField.getText()==null || "".equals(searchFinancialdateField.getText().trim())) return new int[4];
         boolean[] check = checkSelectionSearchDate();
-        String[] date = searchFinancialdatePicker.getText().split("/");
+        String[] date = searchFinancialdateField.getText().split("/");
         int[] int_date = new int[3];
         try {
             int count=0;
@@ -552,12 +552,12 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
     }
 
     public int getSearchFromAmount(){
-        if (searchFinancialFromAmountField.getText().equals("")) return -999;
+        if (searchFinancialFromAmountField.getText().equals("")) return -1;
         else return Integer.parseInt(searchFinancialFromAmountField.getText());
     }
 
     public int getSearchToAmount(){
-        if (searchFinancialToAmountField.getText().equals("")) return -999;
+        if (searchFinancialToAmountField.getText().equals("")) return -1;
         else return Integer.parseInt(searchFinancialToAmountField.getText());
     }
 

@@ -5,29 +5,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a09ea0e-156e-4b35-92c9-15202a40aa6d" name="Changes" comment="update">
+      <change afterPath="$PROJECT_DIR$/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_9.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/img_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/img_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/img_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/img_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/img_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/img_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/img_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/img_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/img_17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/img_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/img_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/img_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/img_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/img_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/img_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/img_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/img_9.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vn/viettuts/qlsv/controller/FinancialController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/viettuts/qlsv/controller/FinancialController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vn/viettuts/qlsv/dao/FinancialDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/viettuts/qlsv/dao/FinancialDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/viettuts/qlsv/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/viettuts/qlsv/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vn/viettuts/qlsv/financial.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/viettuts/qlsv/financial.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vn/viettuts/qlsv/view/FinancialView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/viettuts/qlsv/view/FinancialView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vn/viettuts/qlsv/view/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/viettuts/qlsv/view/LoginView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/controller/FinancialController$AddFinancialListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/controller/FinancialController$AddFinancialListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/controller/FinancialController$ClearFinancialListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/controller/FinancialController$ClearFinancialListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/controller/FinancialController$DeleteFinancialListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/controller/FinancialController$DeleteFinancialListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/controller/FinancialController$EditFinancialListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/controller/FinancialController$EditFinancialListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/controller/FinancialController$ListFinancialChiSelectionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/controller/FinancialController$ListFinancialChiSelectionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/controller/FinancialController$ListFinancialThuSelectionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/controller/FinancialController$ListFinancialThuSelectionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/controller/FinancialController$SearchFinancialAmountListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/controller/FinancialController$SearchFinancialAmountListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/controller/FinancialController$SearchFinancialDateListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/controller/FinancialController$SearchFinancialDateListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/controller/FinancialController$SearchFinancialMaxAmountListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/controller/FinancialController$SearchFinancialMaxAmountListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/controller/FinancialController$SortFinancialAmountListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/controller/FinancialController$SortFinancialAmountListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/controller/FinancialController$SortFinancialDateListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/controller/FinancialController$SortFinancialDateListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/controller/FinancialController$SortFinancialIdListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/controller/FinancialController$SortFinancialIdListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/controller/FinancialController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/controller/FinancialController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/dao/FinancialDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/dao/FinancialDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/view/FinancialView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/view/FinancialView$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/view/FinancialView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/view/FinancialView$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/dao/UserDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/view/FinancialView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/view/FinancialView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/view/LoginView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/view/LoginView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +172,7 @@
       <workItem from="1682320450943" duration="118000" />
       <workItem from="1682325859000" duration="29728000" />
       <workItem from="1682363427550" duration="246000" />
-      <workItem from="1682377369591" duration="24029000" />
+      <workItem from="1682377369591" duration="31793000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1682320061360</created>
@@ -183,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682362831125</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update">
+      <created>1682404275533</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1682404275533</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

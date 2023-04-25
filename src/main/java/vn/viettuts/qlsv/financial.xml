@@ -15,11 +15,11 @@
         <amount>1110000</amount>
     </financial>
     <financial>
-        <id>4</id>
-        <date>2021-06-15</date>
-        <type>Chi</type>
-        <details></details>
-        <amount>10000</amount>
+        <id>5</id>
+        <date>2023-04-12</date>
+        <type>Thu</type>
+        <details>Ăn trưa</details>
+        <amount>25000</amount>
     </financial>
     <financial>
         <id>7</id>
@@ -69,12 +69,5 @@
         <type>Chi</type>
         <details>Mua quan ao</details>
         <amount>250000</amount>
-    </financial>
-    <financial>
-        <id>5</id>
-        <date>2023-04-12</date>
-        <type>Thu</type>
-        <details>Ăn trưa</details>
-        <amount>25000</amount>
     </financial>
 </financials>
