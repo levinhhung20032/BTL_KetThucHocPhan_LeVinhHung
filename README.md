@@ -23,7 +23,7 @@ Sau khi giải nén, người dùng sẽ thấy những file như sau:
 	+ Sau khi tải, hãy chắc chắn chúng được cài đặt tới đường dẫn "C:\Program Files (x86)\Java".
     + Sau khi cài đặt thành công 2 phần mềm, mở "Edit the system environment variables", chọn "Environment Variables...", điền đường dẫn đến thư mục "_bin_" của 2 phần mềm trên vào mỗi mục PATH của cửa sổ hiện ra (hãy để đường dẫn của JDK 20 ở trên JRE 1.8 nhằm đảm bảo sự ưu tiên).
 
-![img.png](img_20.png)
+![img.png](image/img_20.png)
 
 ### Về phần code trên GitHub
 
