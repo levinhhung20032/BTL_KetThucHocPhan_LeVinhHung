@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="LeVinhHung_21011494_de8" />
+        <module name="OOP_LeVinhHung" />
       </profile>
     </annotationProcessing>
   </component>

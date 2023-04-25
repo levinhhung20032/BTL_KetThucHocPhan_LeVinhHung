@@ -12,7 +12,7 @@ import java.util.List;
  * FinancialDao class
  */
 public class FinancialDao {
-    private static final String FINANCIAL_FILE_NAME = "src\\main\\java\\vn\\viettuts\\qlsv\\financial.xml";
+    private static final String FINANCIAL_FILE_NAME = "financial.xml";
     private List<Financial> listFinancials;
 
     public FinancialDao() {

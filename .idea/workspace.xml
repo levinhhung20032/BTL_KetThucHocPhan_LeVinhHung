@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="OOP_LeVinhHung:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a09ea0e-156e-4b35-92c9-15202a40aa6d" name="Changes" comment="update" />
+    <list default="true" id="2a09ea0e-156e-4b35-92c9-15202a40aa6d" name="Changes" comment="update">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/OOP_LeVinhHung_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/OOP_LeVinhHung_jar/OOP_LeVinhHung.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/dao/FinancialDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/dao/FinancialDao.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,9 +69,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
+    "project.structure.side.proportion": "0.1150748",
     "settings.editor.selected.configurable": "JavaScript.Libraries",
     "vue.rearranger.settings.migration": "true"
   }
@@ -123,6 +136,8 @@
       <workItem from="1682325859000" duration="29728000" />
       <workItem from="1682363427550" duration="246000" />
       <workItem from="1682377369591" duration="32103000" />
+      <workItem from="1682412917538" duration="35000" />
+      <workItem from="1682413003354" duration="4000000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1682320061360</created>
@@ -194,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682412755155</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="update">
+      <created>1682412937441</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1682412937441</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
