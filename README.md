@@ -1,10 +1,15 @@
 # Bài tập lớn môn Lập trình hướng đối tượng
 ## Giới thiệu
-Bài làm của: Lê Vĩnh Hưng		
-MSV: 21011494   
-Lớp: K15-KHMT   
+Bài làm của: Lê Vĩnh Hưng
+
+MSV: 21011494   	
+
+Lớp: K15-KHMT   	
+
 Lớp tín chỉ: Lập trình hướng đối tượng-1-2-22(N07)			
-Đề: 8. Quản lý thu chi cá nhân		
+
+Đề: 8. Quản lý thu chi cá nhân			
+
 Link GitHub: https://github.com/levinhhung20032/Nhom8_QLTC_LeVinhHung
 
 Em xin cam kết bài làm không được chia sẻ với bất kì ai ngoài giảng viên nhằm tránh hành vi sao chép bài.
