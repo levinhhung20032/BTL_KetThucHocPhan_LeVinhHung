@@ -70,4 +70,11 @@
         <details>Mua quan ao</details>
         <amount>250000</amount>
     </financial>
+    <financial>
+        <id>18</id>
+        <date>2023-04-10</date>
+        <type>Chi</type>
+        <details>Tiền ăn sáng</details>
+        <amount>25000</amount>
+    </financial>
 </financials>

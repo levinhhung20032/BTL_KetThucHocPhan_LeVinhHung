@@ -97,6 +97,7 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
         datePicker.getSettings().setFormatForDatesCommonEra(formatter);
         datePicker.getSettings().setFormatForDatesBeforeCommonEra(formatter);
         datePicker.getSettings().setFormatForTodayButton(formatter);
+        datePicker.getSettings().setDateRangeLimits(LocalDate.MIN, LocalDate.now());
 
         // khởi tạo các label
         JLabel idLabel = new JLabel("Id");
@@ -292,6 +293,7 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
         this.pack();
         this.setTitle("Financial Management");
         this.setSize(1300, 530);
+        this.setResizable(false);
         // disable Edit and Delete buttons
         editFinancialBtn.setEnabled(false);
         deleteFinancialBtn.setEnabled(false);
@@ -566,21 +568,9 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
     }
 
     private boolean validateDate() {
-        try {
-            String date = datePicker.getText();
-            if (date == null || "".equals(date.trim())) {
-                datePicker.requestFocus();
-                showMessage("Date is empty!");
-                return false;
-            }
-            String[] split_date = date.split("/");
-            if (split_date.length!=3) {
-                showMessage("Date must be day/month/year");
-                return false;
-            }
-        } catch (Exception e) {
-            datePicker.requestFocus();
-            showMessage("Invalid Date, Date must be day/month/year!");
+        String date = datePicker.getText();
+        if (date == null || "".equals(date.trim())) {
+            showMessage("Date is empty!");
             return false;
         }
         return true;

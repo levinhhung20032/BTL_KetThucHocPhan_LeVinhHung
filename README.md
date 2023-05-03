@@ -41,7 +41,7 @@ Toàn bộ chương trình được chứa trong trong thư mục "_src_", trừ
 	+ Package _view_: chứa các chương trình tạo giao diện
 ### Hướng dẫn sử dụng chương trình
 #### Khởi động
-Sau khi chạy file ***App.java*** hoặc file ***Financial.txt***, chương trình sẽ mở giao diện Login như sau:
+Sau khi chạy file ***App.java*** hoặc file ***Financial.exe***, chương trình sẽ mở giao diện Login như sau:
 
 ![img_2.png](image/img_2.png)
 
@@ -106,7 +106,6 @@ Bảng hiển thị các các đối tượng giao dịch, khi thực hiện cá
 - Thông tin về giao dịch đó sẽ tự động được điền vào các mục.
 - Nhấn nút "**Delete**" để thực hiện xóa giao dịch.
 - Nếu thao tác xóa hợp lệ, bảng danh sách giao dịch tự động cập nhật và chương trình hiện thông báo xóa thành công.
-- Nhấn nút "**Clear**" để xóa các thông tin trên các thanh ghi và thực hiện thao tác tiếp theo.
 
 ![img_15.png](image/img_15.png)
 

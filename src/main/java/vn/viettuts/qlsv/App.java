@@ -10,7 +10,7 @@ public class App {
         EventQueue.invokeLater(() -> {
             LoginView view = new LoginView();
             LoginController controller = new LoginController(view);
-            // hiển thị màn hình login
+//             hiển thị màn hình login
             controller.showLoginView();
         });
     }
