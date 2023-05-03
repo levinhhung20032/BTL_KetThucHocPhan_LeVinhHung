@@ -9,16 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a09ea0e-156e-4b35-92c9-15202a40aa6d" name="Changes" comment="update">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/financial.xml" beforeDir="false" afterPath="$PROJECT_DIR$/financial.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/OOP_LeVinhHung_jar/OOP_LeVinhHung.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/viettuts/qlsv/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/viettuts/qlsv/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/viettuts/qlsv/view/FinancialView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/viettuts/qlsv/view/FinancialView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/view/FinancialView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/vn/viettuts/qlsv/view/FinancialView.class" afterDir="false" />
-    </list>
+    <list default="true" id="2a09ea0e-156e-4b35-92c9-15202a40aa6d" name="Changes" comment="update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -142,7 +133,7 @@
       <workItem from="1682470407358" duration="417000" />
       <workItem from="1682471711400" duration="931000" />
       <workItem from="1682654179671" duration="239000" />
-      <workItem from="1683096346002" duration="120000" />
+      <workItem from="1683096346002" duration="394000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1682320061360</created>
@@ -263,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682440521511</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="update">
+      <created>1683096499054</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1683096499054</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
