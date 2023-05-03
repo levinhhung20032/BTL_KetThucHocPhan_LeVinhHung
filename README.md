@@ -4,9 +4,10 @@ Bài làm của: Lê Vĩnh Hưng
 MSV: 21011494   
 Lớp: K15-KHMT   
 Lớp tín chỉ: Lập trình hướng đối tượng-1-2-22(N07)			
-Đề: 8. Quản lý thu chi cá nhân
+Đề: 8. Quản lý thu chi cá nhân		
+Link GitHub: https://github.com/levinhhung20032/Nhom8_QLTC_LeVinhHung
 
-Em xin cam kết bài làm không được chia sẻ với bất kì ai ngoài giáo viên nhằm tránh hành vi sao chép bài.
+Em xin cam kết bài làm không được chia sẻ với bất kì ai ngoài giảng viên nhằm tránh hành vi sao chép bài.
 
 Lưu ý: Bài làm được thực hiện trên IntelliJ IDEA, có thể sẽ không tương thích hoặc xảy ra lỗi khi chạy trên các IDE khác, mong thầy/cô điều chỉnh giúp em hoặc liên hệ trực tiếp với em qua mail 21011494@st.phenikaa-uni.edu.vn.
 
@@ -19,7 +20,7 @@ Sau khi giải nén, người dùng sẽ thấy những file như sau:
 
 - File khởi động: ***Financial.exe***
 - Cơ sở dữ liệu: ***financial.xml***
-- Để chạy được file exe, thiết bị phải được tải sẵn JDK và JRE ở phiên bản mới nhất, trong tệp nén đã có chứa sẵn link dẫn tới trang web có thể tải 2 phần mềm này.
+- Để chạy được file exe, thiết bị phải được cài đặt sẵn JDK và JRE ở phiên bản mới nhất, trong tệp nén đã có chứa sẵn link dẫn tới trang web có thể tải 2 phần mềm này.
 	+ Sau khi tải, hãy chắc chắn chúng được cài đặt tới đường dẫn "C:\Program Files (x86)\Java".
     + Sau khi cài đặt thành công 2 phần mềm, mở "Edit the system environment variables", chọn "Environment Variables...", điền đường dẫn đến thư mục "_bin_" của 2 phần mềm trên vào mỗi mục PATH của cửa sổ hiện ra (hãy để đường dẫn của JDK 20 ở trên JRE 1.8 nhằm đảm bảo sự ưu tiên).
 
