@@ -134,20 +134,20 @@ public class FinancialView extends JFrame implements ActionListener, ListSelecti
         datePicker.getComponentDateTextField().setColumns(12);
         datePicker.getComponentDateTextField().setEditable(false);
         detailsTA = new JTextArea();
-        detailsTA.setColumns(17);
+        detailsTA.setColumns(16);
         detailsTA.setRows(3);
         JScrollPane jScrollPaneDetails = new JScrollPane();
         jScrollPaneDetails.setViewportView(detailsTA);
-        amountField = new JTextField(17);
+        amountField = new JTextField(16);
         balanceField = new JTextField(8);
         balanceField.setEditable(false);
         totalThuField = new JTextField(8);
         totalThuField.setEditable(false);
         totalChiField = new JTextField(8);
         totalChiField.setEditable(false);
-        searchFinancialdateField = new JTextField(7);
-        searchFinancialFromAmountField = new JTextField(7);
-        searchFinancialToAmountField = new JTextField(7);
+        searchFinancialdateField = new JTextField(6);
+        searchFinancialFromAmountField = new JTextField(6);
+        searchFinancialToAmountField = new JTextField(6);
         
         // cài đặt các cột và data cho bảng financial
         financialThuTable.setModel(new DefaultTableModel((Object[][]) dataThu, columnNames));
