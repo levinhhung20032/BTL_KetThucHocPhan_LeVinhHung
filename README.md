@@ -26,7 +26,7 @@ Sau khi giải nén, người dùng sẽ thấy những file như sau:
 - File khởi động: ***Financial.exe***
 - Cơ sở dữ liệu: ***financial.xml***
 - Để chạy được file exe, thiết bị phải được cài đặt sẵn JDK và JRE ở phiên bản mới nhất, trong tệp nén đã có chứa sẵn link dẫn tới trang web có thể tải 2 phần mềm này.
-	+ Sau khi tải, hãy chắc chắn chúng được cài đặt tới đường dẫn "C:\Program Files (x86)\Java".
+	+ Sau khi tải, hãy chắc chắn chúng được cài đặt tới đường dẫn "C:\Program Files\Java".
     + Sau khi cài đặt thành công 2 phần mềm, mở "Edit the system environment variables", chọn "Environment Variables...", điền đường dẫn đến thư mục "_bin_" của 2 phần mềm trên vào mỗi mục PATH của cửa sổ hiện ra (hãy để đường dẫn của JDK 20 ở trên JRE 1.8 nhằm đảm bảo sự ưu tiên).
 
 ![img.png](image/img_20.png)
