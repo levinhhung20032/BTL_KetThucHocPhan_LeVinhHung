@@ -1,3 +1,5 @@
 Manifest-Version: 1.0
 Main-Class: vn.viettuts.qlsv.App
-
+Class-Path: jaxb-api-2.3.1.jar jaxb-impl-2.3.4.jar jakarta.activation-1.
+ 2.2.jar jakarta.xml.bind-api-2.3.3.jar LGoodDatePicker-11.2.1.jar javax
+ .activation-api-1.2.0.jar
